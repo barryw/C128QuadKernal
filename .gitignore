@@ -1,0 +1,7 @@
+build
+debug
+private.xml
+*.pro
+*.b#?
+*.s#?
+*.lck

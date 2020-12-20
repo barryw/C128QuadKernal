@@ -1,0 +1,261 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 12F629 ]
+[d frameptr 0 ]
+"48 /Users/barry/Git/C128QuadKernal/MPLABX/C128-Quad-Kernal.c
+[e E504 state_t `uc
+IDLE 0
+SELECT 1
+]
+"52
+[e E508 select_t `uc
+INITIALIZING 0
+SELECTING 1
+SELECTED 2
+]
+"10 /Applications/microchip/xc8/v2.31/pic/sources/c90/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 /Applications/microchip/xc8/v2.31/pic/sources/c90/common/Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 /Applications/microchip/xc8/v2.31/pic/sources/c90/pic/__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"61 /Users/barry/Git/C128QuadKernal/MPLABX/C128-Quad-Kernal.c
+[v _Delay Delay `(v  1 e 1 0 ]
+"70
+[v _RestorePressed RestorePressed `(uc  1 e 1 0 ]
+"85
+[v _RestorePressedTime RestorePressedTime `(uc  1 e 1 0 ]
+"97
+[v _SetKernal SetKernal `(v  1 e 1 0 ]
+"106
+[v _SetLED SetLED `(v  1 e 1 0 ]
+"114
+[v _SaveKernal SaveKernal `(v  1 e 1 0 ]
+"121
+[v _LoadKernal LoadKernal `(uc  1 e 1 0 ]
+"128
+[v _LEDsOff LEDsOff `(v  1 e 1 0 ]
+"136
+[v _LEDsOn LEDsOn `(v  1 e 1 0 ]
+"144
+[v _FlashLEDs FlashLEDs `(v  1 e 1 0 ]
+"154
+[v _FlashSelectedKernal FlashSelectedKernal `(v  1 e 1 0 ]
+"162
+[v _DoReset DoReset `(v  1 e 1 0 ]
+"171
+[v _Init Init `(v  1 e 1 0 ]
+"200
+[v _main main `(v  1 e 1 0 ]
+[s S83 . 1 `uc 1 C 1 0 :1:0 
+`uc 1 DC 1 0 :1:1 
+`uc 1 Z 1 0 :1:2 
+`uc 1 nPD 1 0 :1:3 
+`uc 1 nTO 1 0 :1:4 
+`uc 1 RP 1 0 :2:5 
+`uc 1 IRP 1 0 :1:7 
+]
+"139 /Users/barry/.mchp_packs/Microchip/PIC10-12Fxxx_DFP/1.4.56/xc8/pic/include/proc/pic12f629.h
+[s S91 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RP0 1 0 :1:5 
+`uc 1 RP1 1 0 :1:6 
+]
+[s S95 . 1 `uc 1 CARRY 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ZERO 1 0 :1:2 
+]
+[u S99 . 1 `S83 1 . 1 0 `S91 1 . 1 0 `S95 1 . 1 0 ]
+[v _STATUSbits STATUSbits `VES99  1 e 1 @3 ]
+[s S35 . 1 `uc 1 GP0 1 0 :1:0 
+`uc 1 GP1 1 0 :1:1 
+`uc 1 GP2 1 0 :1:2 
+`uc 1 GP3 1 0 :1:3 
+`uc 1 GP4 1 0 :1:4 
+`uc 1 GP5 1 0 :1:5 
+]
+"242
+[s S42 . 1 `uc 1 GPIO0 1 0 :1:0 
+`uc 1 GPIO1 1 0 :1:1 
+`uc 1 GPIO2 1 0 :1:2 
+`uc 1 GPIO3 1 0 :1:3 
+`uc 1 GPIO4 1 0 :1:4 
+`uc 1 GPIO5 1 0 :1:5 
+]
+[u S49 . 1 `S35 1 . 1 0 `S42 1 . 1 0 ]
+[v _GPIObits GPIObits `VES49  1 e 1 @5 ]
+[s S120 . 1 `uc 1 GPIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 GPIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"350
+[s S129 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S134 . 1 `S120 1 . 1 0 `S129 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES134  1 e 1 @11 ]
+"565
+[v _CMCON CMCON `VEuc  1 e 1 @25 ]
+"624
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"694
+[v _TRISIO TRISIO `VEuc  1 e 1 @133 ]
+[s S153 . 1 `uc 1 TRISIO0 1 0 :1:0 
+`uc 1 TRISIO1 1 0 :1:1 
+`uc 1 TRISIO2 1 0 :1:2 
+`uc 1 TRISIO3 1 0 :1:3 
+`uc 1 TRISIO4 1 0 :1:4 
+`uc 1 TRISIO5 1 0 :1:5 
+]
+"709
+[u S160 . 1 `S153 1 . 1 0 ]
+[v _TRISIObits TRISIObits `VES160  1 e 1 @133 ]
+[s S171 . 1 `uc 1 WPU0 1 0 :1:0 
+`uc 1 WPU1 1 0 :1:1 
+`uc 1 WPU2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 WPU4 1 0 :1:4 
+`uc 1 WPU5 1 0 :1:5 
+]
+"901
+[u S178 . 1 `S171 1 . 1 0 ]
+[v _WPUbits WPUbits `VES178  1 e 1 @149 ]
+"931
+[v _IOC IOC `VEuc  1 e 1 @150 ]
+"1165
+[v _EEDATA EEDATA `VEuc  1 e 1 @154 ]
+"1203
+[v _EEADR EEADR `VEuc  1 e 1 @155 ]
+"1223
+[v _EECON1 EECON1 `VEuc  1 e 1 @156 ]
+[s S67 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+]
+"1236
+[u S72 . 1 `S67 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES72  1 e 1 @156 ]
+"1261
+[v _EECON2 EECON2 `VEuc  1 e 1 @157 ]
+"1347
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"1368
+[v _GPIE GPIE `VEb  1 e 0 @91 ]
+"1371
+[v _GPIF GPIF `VEb  1 e 0 @88 ]
+"48 /Users/barry/Git/C128QuadKernal/MPLABX/C128-Quad-Kernal.c
+[v _main_state main_state `E504  1 e 1 0 ]
+"52
+[v _select_state select_state `E508  1 e 1 0 ]
+"54
+[v _kernalIndex kernalIndex `uc  1 e 1 0 ]
+"56
+[v _pressedTime pressedTime `uc  1 e 1 0 ]
+"200
+[v _main main `(v  1 e 1 0 ]
+{
+"264
+} 0
+"114
+[v _SaveKernal SaveKernal `(v  1 e 1 0 ]
+{
+[v SaveKernal@index index `uc  1 a 1 wreg ]
+[v SaveKernal@index index `uc  1 a 1 wreg ]
+[v SaveKernal@index index `uc  1 a 1 1 ]
+"116
+} 0
+"85
+[v _RestorePressedTime RestorePressedTime `(uc  1 e 1 0 ]
+{
+[v RestorePressedTime@max max `uc  1 a 1 wreg ]
+"87
+[v RestorePressedTime@count count `uc  1 a 1 8 ]
+"85
+[v RestorePressedTime@max max `uc  1 a 1 wreg ]
+"87
+[v RestorePressedTime@max max `uc  1 a 1 7 ]
+"92
+} 0
+"70
+[v _RestorePressed RestorePressed `(uc  1 e 1 0 ]
+{
+"71
+[v RestorePressed@pressed pressed `uc  1 a 1 5 ]
+"79
+} 0
+"171
+[v _Init Init `(v  1 e 1 0 ]
+{
+"198
+} 0
+"97
+[v _SetKernal SetKernal `(v  1 e 1 0 ]
+{
+[v SetKernal@value value `uc  1 a 1 wreg ]
+[v SetKernal@value value `uc  1 a 1 wreg ]
+[v SetKernal@value value `uc  1 a 1 5 ]
+"101
+} 0
+"121
+[v _LoadKernal LoadKernal `(uc  1 e 1 0 ]
+{
+"123
+} 0
+"136
+[v _LEDsOn LEDsOn `(v  1 e 1 0 ]
+{
+"139
+} 0
+"154
+[v _FlashSelectedKernal FlashSelectedKernal `(v  1 e 1 0 ]
+{
+"156
+[v FlashSelectedKernal@i i `i  1 a 2 8 ]
+"160
+} 0
+"162
+[v _DoReset DoReset `(v  1 e 1 0 ]
+{
+"169
+} 0
+"144
+[v _FlashLEDs FlashLEDs `(v  1 e 1 0 ]
+{
+[v FlashLEDs@value value `uc  1 a 1 wreg ]
+[v FlashLEDs@value value `uc  1 a 1 wreg ]
+[v FlashLEDs@delay delay `us  1 p 2 5 ]
+[v FlashLEDs@value value `uc  1 a 1 7 ]
+"148
+} 0
+"128
+[v _LEDsOff LEDsOff `(v  1 e 1 0 ]
+{
+"131
+} 0
+"106
+[v _SetLED SetLED `(v  1 e 1 0 ]
+{
+[v SetLED@value value `uc  1 a 1 wreg ]
+[v SetLED@value value `uc  1 a 1 wreg ]
+[v SetLED@value value `uc  1 a 1 0 ]
+"109
+} 0
+"61
+[v _Delay Delay `(v  1 e 1 0 ]
+{
+"62
+[v Delay@i i `i  1 a 2 3 ]
+"61
+[v Delay@ms ms `us  1 p 2 0 ]
+"65
+} 0

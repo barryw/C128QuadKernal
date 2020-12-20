@@ -1,0 +1,2039 @@
+
+
+Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
+                                                                                               Sat Dec 19 15:39:06 2020
+
+Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og9 
+     1                           	processor	12F629
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	maintext,global,class=CODE,split=1,delta=2
+     9                           	psect	text1,local,class=CODE,merge=1,delta=2
+    10                           	psect	text2,local,class=CODE,merge=1,delta=2
+    11                           	psect	text3,local,class=CODE,merge=1,delta=2
+    12                           	psect	text4,local,class=CODE,merge=1,delta=2
+    13                           	psect	text5,local,class=CODE,merge=1,delta=2
+    14                           	psect	text6,local,class=CODE,merge=1,delta=2
+    15                           	psect	text7,local,class=CODE,merge=1,delta=2
+    16                           	psect	text8,local,class=CODE,merge=1,delta=2
+    17                           	psect	text9,local,class=CODE,merge=1,delta=2
+    18                           	psect	text10,local,class=CODE,merge=1,delta=2
+    19                           	psect	text11,local,class=CODE,merge=1,delta=2
+    20                           	psect	text12,local,class=CODE,merge=1,delta=2
+    21                           	psect	text13,local,class=CODE,merge=1,delta=2
+    22                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    23                           	dabs	1,0x5E,2
+    24  0000                     
+    25                           ; Version 2.32
+    26                           ; Generated 23/11/2020 GMT
+    27                           ; 
+    28                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    29                           ; All rights reserved.
+    30                           ; 
+    31                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    32                           ; 
+    33                           ; Redistribution and use in source and binary forms, with or without modification, are
+    34                           ; permitted provided that the following conditions are met:
+    35                           ; 
+    36                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    37                           ;        conditions and the following disclaimer.
+    38                           ; 
+    39                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    40                           ;        of conditions and the following disclaimer in the documentation and/or other
+    41                           ;        materials provided with the distribution. Publication is not required when
+    42                           ;        this file is used in an embedded application.
+    43                           ; 
+    44                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    45                           ;        software without specific prior written permission.
+    46                           ; 
+    47                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    48                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    49                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    50                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    51                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    52                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    53                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    54                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    55                           ; 
+    56                           ; 
+    57                           ; Code-generator required, PIC12F629 Definitions
+    58                           ; 
+    59                           ; SFR Addresses
+    60  0000                     	;# 
+    61  0001                     	;# 
+    62  0002                     	;# 
+    63  0003                     	;# 
+    64  0004                     	;# 
+    65  0005                     	;# 
+    66  000A                     	;# 
+    67  000B                     	;# 
+    68  000C                     	;# 
+    69  000E                     	;# 
+    70  000E                     	;# 
+    71  000F                     	;# 
+    72  0010                     	;# 
+    73  0019                     	;# 
+    74  0081                     	;# 
+    75  0085                     	;# 
+    76  008C                     	;# 
+    77  008E                     	;# 
+    78  0090                     	;# 
+    79  0095                     	;# 
+    80  0096                     	;# 
+    81  0096                     	;# 
+    82  0099                     	;# 
+    83  009A                     	;# 
+    84  009A                     	;# 
+    85  009B                     	;# 
+    86  009C                     	;# 
+    87  009D                     	;# 
+    88  0000                     	;# 
+    89  0001                     	;# 
+    90  0002                     	;# 
+    91  0003                     	;# 
+    92  0004                     	;# 
+    93  0005                     	;# 
+    94  000A                     	;# 
+    95  000B                     	;# 
+    96  000C                     	;# 
+    97  000E                     	;# 
+    98  000E                     	;# 
+    99  000F                     	;# 
+   100  0010                     	;# 
+   101  0019                     	;# 
+   102  0081                     	;# 
+   103  0085                     	;# 
+   104  008C                     	;# 
+   105  008E                     	;# 
+   106  0090                     	;# 
+   107  0095                     	;# 
+   108  0096                     	;# 
+   109  0096                     	;# 
+   110  0099                     	;# 
+   111  009A                     	;# 
+   112  009A                     	;# 
+   113  009B                     	;# 
+   114  009C                     	;# 
+   115  009D                     	;# 
+   116  0019                     _CMCON	set	25
+   117  000B                     _INTCONbits	set	11
+   118  0003                     _STATUSbits	set	3
+   119  0005                     _GPIObits	set	5
+   120  0058                     _GPIF	set	88
+   121  005F                     _GIE	set	95
+   122  005B                     _GPIE	set	91
+   123  0096                     _IOC	set	150
+   124  0085                     _TRISIO	set	133
+   125  0095                     _WPUbits	set	149
+   126  0081                     _OPTION_REG	set	129
+   127  0085                     _TRISIObits	set	133
+   128  009D                     _EECON2	set	157
+   129  009C                     _EECON1	set	156
+   130  009A                     _EEDATA	set	154
+   131  009B                     _EEADR	set	155
+   132  009C                     _EECON1bits	set	156
+   133                           
+   134                           	psect	cinit
+   135  03F7                     start_initialization:	
+   136                           ; #config settings
+   137                           
+   138  03F7                     __initialization:
+   139                           
+   140                           ; Clear objects allocated to BANK0
+   141  03F7  1283               	bcf	3,5	;RP0=0, select bank0
+   142  03F8  01AC               	clrf	__pbssBANK0& (0+127)
+   143  03F9  01AD               	clrf	(__pbssBANK0+1)& (0+127)
+   144  03FA  01AE               	clrf	(__pbssBANK0+2)& (0+127)
+   145  03FB  01AF               	clrf	(__pbssBANK0+3)& (0+127)
+   146  03FC  01B0               	clrf	(__pbssBANK0+4)& (0+127)
+   147  03FD                     end_of_initialization:	
+   148                           ;End of C runtime variable initialization code
+   149                           
+   150  03FD                     __end_of__initialization:
+   151  03FD  0183               	clrf	3
+   152  03FE  2A66               	ljmp	_main	;jump to C main() function
+   153                           
+   154                           	psect	bssBANK0
+   155  002C                     __pbssBANK0:
+   156  002C                     _pressedTime:
+   157  002C                     	ds	1
+   158  002D                     _ignoreReset:
+   159  002D                     	ds	1
+   160  002E                     _kernalIndex:
+   161  002E                     	ds	1
+   162  002F                     _select_state:
+   163  002F                     	ds	1
+   164  0030                     _main_state:
+   165  0030                     	ds	1
+   166                           
+   167                           	psect	cstackCOMMON
+   168  0000                     __pcstackCOMMON:
+   169  0000                     ??_RestorePressed:
+   170  0000                     ??_SetKernal:	
+   171                           ; 1 bytes @ 0x0
+   172                           
+   173  0000                     ??_SetLED:	
+   174                           ; 1 bytes @ 0x0
+   175                           
+   176  0000                     ??_LEDsOff:	
+   177                           ; 1 bytes @ 0x0
+   178                           
+   179  0000                     ??_LEDsOn:	
+   180                           ; 1 bytes @ 0x0
+   181                           
+   182  0000                     ??_FlashLEDs:	
+   183                           ; 1 bytes @ 0x0
+   184                           
+   185  0000                     ??_FlashSelectedKernal:	
+   186                           ; 1 bytes @ 0x0
+   187                           
+   188  0000                     ??_DoReset:	
+   189                           ; 1 bytes @ 0x0
+   190                           
+   191                           
+   192                           	psect	cstackBANK0
+   193  0020                     __pcstackBANK0:	
+   194                           ; 1 bytes @ 0x0
+   195                           
+   196  0020                     ?_Delay:
+   197  0020                     ?_RestorePressed:	
+   198                           ; 1 bytes @ 0x0
+   199                           
+   200  0020                     ?_RestorePressedTime:	
+   201                           ; 1 bytes @ 0x0
+   202                           
+   203  0020                     ?_SetKernal:	
+   204                           ; 1 bytes @ 0x0
+   205                           
+   206  0020                     ?_SetLED:	
+   207                           ; 1 bytes @ 0x0
+   208                           
+   209  0020                     ?_SaveKernal:	
+   210                           ; 1 bytes @ 0x0
+   211                           
+   212  0020                     ??_SaveKernal:	
+   213                           ; 1 bytes @ 0x0
+   214                           
+   215  0020                     ?_LoadKernal:	
+   216                           ; 1 bytes @ 0x0
+   217                           
+   218  0020                     ??_LoadKernal:	
+   219                           ; 1 bytes @ 0x0
+   220                           
+   221  0020                     ?_LEDsOff:	
+   222                           ; 1 bytes @ 0x0
+   223                           
+   224  0020                     ?_LEDsOn:	
+   225                           ; 1 bytes @ 0x0
+   226                           
+   227  0020                     ?_FlashSelectedKernal:	
+   228                           ; 1 bytes @ 0x0
+   229                           
+   230  0020                     ?_DoReset:	
+   231                           ; 1 bytes @ 0x0
+   232                           
+   233  0020                     ?_Init:	
+   234                           ; 1 bytes @ 0x0
+   235                           
+   236  0020                     ?_main:	
+   237                           ; 1 bytes @ 0x0
+   238                           
+   239  0020                     SetLED@value:	
+   240                           ; 1 bytes @ 0x0
+   241                           
+   242  0020                     Delay@ms:	
+   243                           ; 1 bytes @ 0x0
+   244                           
+   245                           
+   246                           ; 2 bytes @ 0x0
+   247  0020                     	ds	1
+   248  0021                     SaveKernal@index:
+   249                           
+   250                           ; 1 bytes @ 0x1
+   251  0021                     	ds	1
+   252  0022                     ??_Delay:
+   253                           
+   254                           ; 1 bytes @ 0x2
+   255  0022                     	ds	1
+   256  0023                     Delay@i:
+   257                           
+   258                           ; 2 bytes @ 0x3
+   259  0023                     	ds	2
+   260  0025                     ?_FlashLEDs:
+   261  0025                     RestorePressed@pressed:	
+   262                           ; 1 bytes @ 0x5
+   263                           
+   264  0025                     SetKernal@value:	
+   265                           ; 1 bytes @ 0x5
+   266                           
+   267  0025                     FlashLEDs@delay:	
+   268                           ; 1 bytes @ 0x5
+   269                           
+   270                           
+   271                           ; 2 bytes @ 0x5
+   272  0025                     	ds	1
+   273  0026                     ??_RestorePressedTime:
+   274                           
+   275                           ; 1 bytes @ 0x6
+   276  0026                     	ds	1
+   277  0027                     RestorePressedTime@max:
+   278  0027                     FlashLEDs@value:	
+   279                           ; 1 bytes @ 0x7
+   280                           
+   281                           
+   282                           ; 1 bytes @ 0x7
+   283  0027                     	ds	1
+   284  0028                     RestorePressedTime@count:
+   285  0028                     FlashSelectedKernal@i:	
+   286                           ; 1 bytes @ 0x8
+   287                           
+   288                           
+   289                           ; 2 bytes @ 0x8
+   290  0028                     	ds	2
+   291  002A                     ??_Init:
+   292                           
+   293                           ; 1 bytes @ 0xA
+   294  002A                     	ds	1
+   295  002B                     ??_main:
+   296                           
+   297                           ; 1 bytes @ 0xB
+   298  002B                     	ds	1
+   299                           
+   300                           	psect	maintext
+   301  0266                     __pmaintext:	
+   302 ;;
+   303 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   304 ;;
+   305 ;; *************** function _main *****************
+   306 ;; Defined at:
+   307 ;;		line 200 in file "C128-Quad-Kernal.c"
+   308 ;; Parameters:    Size  Location     Type
+   309 ;;		None
+   310 ;; Auto vars:     Size  Location     Type
+   311 ;;		None
+   312 ;; Return value:  Size  Location     Type
+   313 ;;                  1    wreg      void 
+   314 ;; Registers used:
+   315 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   316 ;; Tracked objects:
+   317 ;;		On entry : B00/0
+   318 ;;		On exit  : 100/0
+   319 ;;		Unchanged: 0/0
+   320 ;; Data sizes:     COMMON   BANK0
+   321 ;;      Params:         0       0
+   322 ;;      Locals:         0       0
+   323 ;;      Temps:          0       1
+   324 ;;      Totals:         0       1
+   325 ;;Total ram usage:        1 bytes
+   326 ;; Hardware stack levels required when called:    5
+   327 ;; This function calls:
+   328 ;;		_DoReset
+   329 ;;		_FlashLEDs
+   330 ;;		_Init
+   331 ;;		_LoadKernal
+   332 ;;		_RestorePressed
+   333 ;;		_RestorePressedTime
+   334 ;;		_SaveKernal
+   335 ;;		_SetKernal
+   336 ;;		_SetLED
+   337 ;; This function is called by:
+   338 ;;		Startup code after reset
+   339 ;; This function uses a non-reentrant model
+   340 ;;
+   341                           
+   342                           
+   343                           ;psect for function _main
+   344  0266                     _main:
+   345                           
+   346                           ;C128-Quad-Kernal.c: 201: Init();
+   347                           
+   348                           ;incstack = 0
+   349                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   350  0266  223C               	fcall	_Init
+   351  0267  2BED               	goto	l1061
+   352  0268                     l1023:
+   353                           
+   354                           ;C128-Quad-Kernal.c: 208: if(RestorePressedTime(200) == 200) {
+   355  0268  30C8               	movlw	200
+   356  0269  21A6               	fcall	_RestorePressedTime
+   357  026A  3AC8               	xorlw	200
+   358  026B  1D03               	skipz
+   359  026C  2A7A               	goto	l112
+   360                           
+   361                           ;C128-Quad-Kernal.c: 209: FlashLEDs(1, 100);
+   362  026D  3064               	movlw	100
+   363  026E  00A5               	movwf	FlashLEDs@delay
+   364  026F  3000               	movlw	0
+   365  0270  00A6               	movwf	FlashLEDs@delay+1
+   366  0271  3001               	movlw	1
+   367  0272  2172               	fcall	_FlashLEDs
+   368  0273                     l1027:	
+   369                           ;C128-Quad-Kernal.c: 210: while(RestorePressed()) {}
+   370                           
+   371  0273  2187               	fcall	_RestorePressed
+   372  0274  3A00               	xorlw	0
+   373  0275  1D03               	skipz
+   374  0276  2A73               	goto	l1027
+   375                           
+   376                           ;C128-Quad-Kernal.c: 211: main_state = SELECT;
+   377  0277  01B0               	clrf	_main_state
+   378  0278  0AB0               	incf	_main_state,f
+   379                           
+   380                           ;C128-Quad-Kernal.c: 212: } else {
+   381  0279  2BED               	goto	l1061
+   382  027A                     l112:
+   383  027A  0063               	sleep	;# 
+   384  027B  2AA6               	goto	L1
+   385  027C                     l1029:	
+   386                           ;C128-Quad-Kernal.c: 214: GPIF = 0;
+   387                           
+   388                           
+   389                           ;C128-Quad-Kernal.c: 223: kernalIndex = LoadKernal();
+   390  027C  217C               	fcall	_LoadKernal
+   391  027D  1283               	bcf	3,5	;RP0=0, select bank0
+   392  027E  00AB               	movwf	??_main
+   393  027F  082B               	movf	??_main,w
+   394  0280  00AE               	movwf	_kernalIndex
+   395                           
+   396                           ;C128-Quad-Kernal.c: 224: SetLED(kernalIndex);
+   397  0281  082E               	movf	_kernalIndex,w
+   398  0282  2195               	fcall	_SetLED
+   399                           
+   400                           ;C128-Quad-Kernal.c: 225: select_state = SELECTING;
+   401  0283  01AF               	clrf	_select_state
+   402  0284  0AAF               	incf	_select_state,f
+   403  0285                     l121:	
+   404                           ;C128-Quad-Kernal.c: 227: case SELECTING:
+   405                           
+   406                           
+   407                           ;C128-Quad-Kernal.c: 233: pressedTime = RestorePressedTime(200);
+   408  0285  30C8               	movlw	200
+   409  0286  21A6               	fcall	_RestorePressedTime
+   410  0287  00AB               	movwf	??_main
+   411  0288  082B               	movf	??_main,w
+   412  0289  00AC               	movwf	_pressedTime
+   413                           
+   414                           ;C128-Quad-Kernal.c: 234: switch(pressedTime) {
+   415  028A  2AA8               	goto	l1045
+   416  028B                     l1033:
+   417                           
+   418                           ;C128-Quad-Kernal.c: 236: FlashLEDs(1, 100);
+   419  028B  3064               	movlw	100
+   420  028C  00A5               	movwf	FlashLEDs@delay
+   421  028D  3000               	movlw	0
+   422  028E  00A6               	movwf	FlashLEDs@delay+1
+   423  028F  3001               	movlw	1
+   424  0290  2172               	fcall	_FlashLEDs
+   425                           
+   426                           ;C128-Quad-Kernal.c: 237: select_state = SELECTED;
+   427  0291  3002               	movlw	2
+   428  0292  00AB               	movwf	??_main
+   429  0293  082B               	movf	??_main,w
+   430  0294  00AF               	movwf	_select_state
+   431                           
+   432                           ;C128-Quad-Kernal.c: 238: break;
+   433  0295  2BED               	goto	l1061
+   434  0296                     l1037:
+   435  0296  2187               	fcall	_RestorePressed
+   436  0297  3A00               	xorlw	0
+   437  0298  1D03               	skipz
+   438  0299  2A96               	goto	l1037
+   439                           
+   440                           ;C128-Quad-Kernal.c: 241: kernalIndex++;
+   441  029A  3001               	movlw	1
+   442  029B  00AB               	movwf	??_main
+   443  029C  082B               	movf	??_main,w
+   444  029D  07AE               	addwf	_kernalIndex,f
+   445                           
+   446                           ;C128-Quad-Kernal.c: 242: if(kernalIndex == 4) kernalIndex = 0;
+   447  029E  3004               	movlw	4
+   448  029F  062E               	xorwf	_kernalIndex,w
+   449  02A0  1903               	btfsc	3,2
+   450  02A1  01AE               	clrf	_kernalIndex
+   451                           
+   452                           ;C128-Quad-Kernal.c: 243: SetLED(kernalIndex);
+   453  02A2  082E               	movf	_kernalIndex,w
+   454  02A3  2195               	fcall	_SetLED
+   455                           
+   456                           ;C128-Quad-Kernal.c: 244: break;
+   457  02A4  2BED               	goto	l1061
+   458  02A5                     l130:	
+   459                           ;C128-Quad-Kernal.c: 245: default:
+   460                           
+   461  02A5  0063               	sleep	;# 
+   462  02A6                     L1:
+   463                           
+   464                           ;C128-Quad-Kernal.c: 247: GPIF = 0;
+   465  02A6  100B               	bcf	11,0	;volatile
+   466                           
+   467                           ;C128-Quad-Kernal.c: 248: }
+   468  02A7  2BED               	goto	l1061
+   469  02A8                     l1045:
+   470  02A8  082C               	movf	_pressedTime,w
+   471                           
+   472                           ; Switch size 1, requested type "simple"
+   473                           ; Number of cases is 101, Range of values is 1 to 200
+   474                           ; switch strategies available:
+   475                           ; Name         Instructions Cycles
+   476                           ; direct_byte          209     9 (fixed)
+   477                           ; simple_byte          304   153 (average)
+   478                           ; jumptable            263     9 (fixed)
+   479                           ;	Chosen strategy is simple_byte
+   480  02A9  3A01               	xorlw	1	; case 1
+   481  02AA  1903               	skipnz
+   482  02AB  2A96               	goto	l1037
+   483  02AC  3A03               	xorlw	3	; case 2
+   484  02AD  1903               	skipnz
+   485  02AE  2A96               	goto	l1037
+   486  02AF  3A01               	xorlw	1	; case 3
+   487  02B0  1903               	skipnz
+   488  02B1  2A96               	goto	l1037
+   489  02B2  3A07               	xorlw	7	; case 4
+   490  02B3  1903               	skipnz
+   491  02B4  2A96               	goto	l1037
+   492  02B5  3A01               	xorlw	1	; case 5
+   493  02B6  1903               	skipnz
+   494  02B7  2A96               	goto	l1037
+   495  02B8  3A03               	xorlw	3	; case 6
+   496  02B9  1903               	skipnz
+   497  02BA  2A96               	goto	l1037
+   498  02BB  3A01               	xorlw	1	; case 7
+   499  02BC  1903               	skipnz
+   500  02BD  2A96               	goto	l1037
+   501  02BE  3A0F               	xorlw	15	; case 8
+   502  02BF  1903               	skipnz
+   503  02C0  2A96               	goto	l1037
+   504  02C1  3A01               	xorlw	1	; case 9
+   505  02C2  1903               	skipnz
+   506  02C3  2A96               	goto	l1037
+   507  02C4  3A03               	xorlw	3	; case 10
+   508  02C5  1903               	skipnz
+   509  02C6  2A96               	goto	l1037
+   510  02C7  3A01               	xorlw	1	; case 11
+   511  02C8  1903               	skipnz
+   512  02C9  2A96               	goto	l1037
+   513  02CA  3A07               	xorlw	7	; case 12
+   514  02CB  1903               	skipnz
+   515  02CC  2A96               	goto	l1037
+   516  02CD  3A01               	xorlw	1	; case 13
+   517  02CE  1903               	skipnz
+   518  02CF  2A96               	goto	l1037
+   519  02D0  3A03               	xorlw	3	; case 14
+   520  02D1  1903               	skipnz
+   521  02D2  2A96               	goto	l1037
+   522  02D3  3A01               	xorlw	1	; case 15
+   523  02D4  1903               	skipnz
+   524  02D5  2A96               	goto	l1037
+   525  02D6  3A1F               	xorlw	31	; case 16
+   526  02D7  1903               	skipnz
+   527  02D8  2A96               	goto	l1037
+   528  02D9  3A01               	xorlw	1	; case 17
+   529  02DA  1903               	skipnz
+   530  02DB  2A96               	goto	l1037
+   531  02DC  3A03               	xorlw	3	; case 18
+   532  02DD  1903               	skipnz
+   533  02DE  2A96               	goto	l1037
+   534  02DF  3A01               	xorlw	1	; case 19
+   535  02E0  1903               	skipnz
+   536  02E1  2A96               	goto	l1037
+   537  02E2  3A07               	xorlw	7	; case 20
+   538  02E3  1903               	skipnz
+   539  02E4  2A96               	goto	l1037
+   540  02E5  3A01               	xorlw	1	; case 21
+   541  02E6  1903               	skipnz
+   542  02E7  2A96               	goto	l1037
+   543  02E8  3A03               	xorlw	3	; case 22
+   544  02E9  1903               	skipnz
+   545  02EA  2A96               	goto	l1037
+   546  02EB  3A01               	xorlw	1	; case 23
+   547  02EC  1903               	skipnz
+   548  02ED  2A96               	goto	l1037
+   549  02EE  3A0F               	xorlw	15	; case 24
+   550  02EF  1903               	skipnz
+   551  02F0  2A96               	goto	l1037
+   552  02F1  3A01               	xorlw	1	; case 25
+   553  02F2  1903               	skipnz
+   554  02F3  2A96               	goto	l1037
+   555  02F4  3A03               	xorlw	3	; case 26
+   556  02F5  1903               	skipnz
+   557  02F6  2A96               	goto	l1037
+   558  02F7  3A01               	xorlw	1	; case 27
+   559  02F8  1903               	skipnz
+   560  02F9  2A96               	goto	l1037
+   561  02FA  3A07               	xorlw	7	; case 28
+   562  02FB  1903               	skipnz
+   563  02FC  2A96               	goto	l1037
+   564  02FD  3A01               	xorlw	1	; case 29
+   565  02FE  1903               	skipnz
+   566  02FF  2A96               	goto	l1037
+   567  0300  3A03               	xorlw	3	; case 30
+   568  0301  1903               	skipnz
+   569  0302  2A96               	goto	l1037
+   570  0303  3A01               	xorlw	1	; case 31
+   571  0304  1903               	skipnz
+   572  0305  2A96               	goto	l1037
+   573  0306  3A3F               	xorlw	63	; case 32
+   574  0307  1903               	skipnz
+   575  0308  2A96               	goto	l1037
+   576  0309  3A01               	xorlw	1	; case 33
+   577  030A  1903               	skipnz
+   578  030B  2A96               	goto	l1037
+   579  030C  3A03               	xorlw	3	; case 34
+   580  030D  1903               	skipnz
+   581  030E  2A96               	goto	l1037
+   582  030F  3A01               	xorlw	1	; case 35
+   583  0310  1903               	skipnz
+   584  0311  2A96               	goto	l1037
+   585  0312  3A07               	xorlw	7	; case 36
+   586  0313  1903               	skipnz
+   587  0314  2A96               	goto	l1037
+   588  0315  3A01               	xorlw	1	; case 37
+   589  0316  1903               	skipnz
+   590  0317  2A96               	goto	l1037
+   591  0318  3A03               	xorlw	3	; case 38
+   592  0319  1903               	skipnz
+   593  031A  2A96               	goto	l1037
+   594  031B  3A01               	xorlw	1	; case 39
+   595  031C  1903               	skipnz
+   596  031D  2A96               	goto	l1037
+   597  031E  3A0F               	xorlw	15	; case 40
+   598  031F  1903               	skipnz
+   599  0320  2A96               	goto	l1037
+   600  0321  3A01               	xorlw	1	; case 41
+   601  0322  1903               	skipnz
+   602  0323  2A96               	goto	l1037
+   603  0324  3A03               	xorlw	3	; case 42
+   604  0325  1903               	skipnz
+   605  0326  2A96               	goto	l1037
+   606  0327  3A01               	xorlw	1	; case 43
+   607  0328  1903               	skipnz
+   608  0329  2A96               	goto	l1037
+   609  032A  3A07               	xorlw	7	; case 44
+   610  032B  1903               	skipnz
+   611  032C  2A96               	goto	l1037
+   612  032D  3A01               	xorlw	1	; case 45
+   613  032E  1903               	skipnz
+   614  032F  2A96               	goto	l1037
+   615  0330  3A03               	xorlw	3	; case 46
+   616  0331  1903               	skipnz
+   617  0332  2A96               	goto	l1037
+   618  0333  3A01               	xorlw	1	; case 47
+   619  0334  1903               	skipnz
+   620  0335  2A96               	goto	l1037
+   621  0336  3A1F               	xorlw	31	; case 48
+   622  0337  1903               	skipnz
+   623  0338  2A96               	goto	l1037
+   624  0339  3A01               	xorlw	1	; case 49
+   625  033A  1903               	skipnz
+   626  033B  2A96               	goto	l1037
+   627  033C  3A03               	xorlw	3	; case 50
+   628  033D  1903               	skipnz
+   629  033E  2A96               	goto	l1037
+   630  033F  3A01               	xorlw	1	; case 51
+   631  0340  1903               	skipnz
+   632  0341  2A96               	goto	l1037
+   633  0342  3A07               	xorlw	7	; case 52
+   634  0343  1903               	skipnz
+   635  0344  2A96               	goto	l1037
+   636  0345  3A01               	xorlw	1	; case 53
+   637  0346  1903               	skipnz
+   638  0347  2A96               	goto	l1037
+   639  0348  3A03               	xorlw	3	; case 54
+   640  0349  1903               	skipnz
+   641  034A  2A96               	goto	l1037
+   642  034B  3A01               	xorlw	1	; case 55
+   643  034C  1903               	skipnz
+   644  034D  2A96               	goto	l1037
+   645  034E  3A0F               	xorlw	15	; case 56
+   646  034F  1903               	skipnz
+   647  0350  2A96               	goto	l1037
+   648  0351  3A01               	xorlw	1	; case 57
+   649  0352  1903               	skipnz
+   650  0353  2A96               	goto	l1037
+   651  0354  3A03               	xorlw	3	; case 58
+   652  0355  1903               	skipnz
+   653  0356  2A96               	goto	l1037
+   654  0357  3A01               	xorlw	1	; case 59
+   655  0358  1903               	skipnz
+   656  0359  2A96               	goto	l1037
+   657  035A  3A07               	xorlw	7	; case 60
+   658  035B  1903               	skipnz
+   659  035C  2A96               	goto	l1037
+   660  035D  3A01               	xorlw	1	; case 61
+   661  035E  1903               	skipnz
+   662  035F  2A96               	goto	l1037
+   663  0360  3A03               	xorlw	3	; case 62
+   664  0361  1903               	skipnz
+   665  0362  2A96               	goto	l1037
+   666  0363  3A01               	xorlw	1	; case 63
+   667  0364  1903               	skipnz
+   668  0365  2A96               	goto	l1037
+   669  0366  3A7F               	xorlw	127	; case 64
+   670  0367  1903               	skipnz
+   671  0368  2A96               	goto	l1037
+   672  0369  3A01               	xorlw	1	; case 65
+   673  036A  1903               	skipnz
+   674  036B  2A96               	goto	l1037
+   675  036C  3A03               	xorlw	3	; case 66
+   676  036D  1903               	skipnz
+   677  036E  2A96               	goto	l1037
+   678  036F  3A01               	xorlw	1	; case 67
+   679  0370  1903               	skipnz
+   680  0371  2A96               	goto	l1037
+   681  0372  3A07               	xorlw	7	; case 68
+   682  0373  1903               	skipnz
+   683  0374  2A96               	goto	l1037
+   684  0375  3A01               	xorlw	1	; case 69
+   685  0376  1903               	skipnz
+   686  0377  2A96               	goto	l1037
+   687  0378  3A03               	xorlw	3	; case 70
+   688  0379  1903               	skipnz
+   689  037A  2A96               	goto	l1037
+   690  037B  3A01               	xorlw	1	; case 71
+   691  037C  1903               	skipnz
+   692  037D  2A96               	goto	l1037
+   693  037E  3A0F               	xorlw	15	; case 72
+   694  037F  1903               	skipnz
+   695  0380  2A96               	goto	l1037
+   696  0381  3A01               	xorlw	1	; case 73
+   697  0382  1903               	skipnz
+   698  0383  2A96               	goto	l1037
+   699  0384  3A03               	xorlw	3	; case 74
+   700  0385  1903               	skipnz
+   701  0386  2A96               	goto	l1037
+   702  0387  3A01               	xorlw	1	; case 75
+   703  0388  1903               	skipnz
+   704  0389  2A96               	goto	l1037
+   705  038A  3A07               	xorlw	7	; case 76
+   706  038B  1903               	skipnz
+   707  038C  2A96               	goto	l1037
+   708  038D  3A01               	xorlw	1	; case 77
+   709  038E  1903               	skipnz
+   710  038F  2A96               	goto	l1037
+   711  0390  3A03               	xorlw	3	; case 78
+   712  0391  1903               	skipnz
+   713  0392  2A96               	goto	l1037
+   714  0393  3A01               	xorlw	1	; case 79
+   715  0394  1903               	skipnz
+   716  0395  2A96               	goto	l1037
+   717  0396  3A1F               	xorlw	31	; case 80
+   718  0397  1903               	skipnz
+   719  0398  2A96               	goto	l1037
+   720  0399  3A01               	xorlw	1	; case 81
+   721  039A  1903               	skipnz
+   722  039B  2A96               	goto	l1037
+   723  039C  3A03               	xorlw	3	; case 82
+   724  039D  1903               	skipnz
+   725  039E  2A96               	goto	l1037
+   726  039F  3A01               	xorlw	1	; case 83
+   727  03A0  1903               	skipnz
+   728  03A1  2A96               	goto	l1037
+   729  03A2  3A07               	xorlw	7	; case 84
+   730  03A3  1903               	skipnz
+   731  03A4  2A96               	goto	l1037
+   732  03A5  3A01               	xorlw	1	; case 85
+   733  03A6  1903               	skipnz
+   734  03A7  2A96               	goto	l1037
+   735  03A8  3A03               	xorlw	3	; case 86
+   736  03A9  1903               	skipnz
+   737  03AA  2A96               	goto	l1037
+   738  03AB  3A01               	xorlw	1	; case 87
+   739  03AC  1903               	skipnz
+   740  03AD  2A96               	goto	l1037
+   741  03AE  3A0F               	xorlw	15	; case 88
+   742  03AF  1903               	skipnz
+   743  03B0  2A96               	goto	l1037
+   744  03B1  3A01               	xorlw	1	; case 89
+   745  03B2  1903               	skipnz
+   746  03B3  2A96               	goto	l1037
+   747  03B4  3A03               	xorlw	3	; case 90
+   748  03B5  1903               	skipnz
+   749  03B6  2A96               	goto	l1037
+   750  03B7  3A01               	xorlw	1	; case 91
+   751  03B8  1903               	skipnz
+   752  03B9  2A96               	goto	l1037
+   753  03BA  3A07               	xorlw	7	; case 92
+   754  03BB  1903               	skipnz
+   755  03BC  2A96               	goto	l1037
+   756  03BD  3A01               	xorlw	1	; case 93
+   757  03BE  1903               	skipnz
+   758  03BF  2A96               	goto	l1037
+   759  03C0  3A03               	xorlw	3	; case 94
+   760  03C1  1903               	skipnz
+   761  03C2  2A96               	goto	l1037
+   762  03C3  3A01               	xorlw	1	; case 95
+   763  03C4  1903               	skipnz
+   764  03C5  2A96               	goto	l1037
+   765  03C6  3A3F               	xorlw	63	; case 96
+   766  03C7  1903               	skipnz
+   767  03C8  2A96               	goto	l1037
+   768  03C9  3A01               	xorlw	1	; case 97
+   769  03CA  1903               	skipnz
+   770  03CB  2A96               	goto	l1037
+   771  03CC  3A03               	xorlw	3	; case 98
+   772  03CD  1903               	skipnz
+   773  03CE  2A96               	goto	l1037
+   774  03CF  3A01               	xorlw	1	; case 99
+   775  03D0  1903               	skipnz
+   776  03D1  2A96               	goto	l1037
+   777  03D2  3A07               	xorlw	7	; case 100
+   778  03D3  1903               	skipnz
+   779  03D4  2A96               	goto	l1037
+   780  03D5  3AAC               	xorlw	172	; case 200
+   781  03D6  1903               	skipnz
+   782  03D7  2A8B               	goto	l1033
+   783  03D8  2AA5               	goto	l130
+   784  03D9                     l1047:
+   785                           
+   786                           ;C128-Quad-Kernal.c: 254: main_state = IDLE;
+   787  03D9  01B0               	clrf	_main_state
+   788                           
+   789                           ;C128-Quad-Kernal.c: 255: select_state = INITIALIZING;
+   790  03DA  01AF               	clrf	_select_state
+   791                           
+   792                           ;C128-Quad-Kernal.c: 256: SaveKernal(kernalIndex);
+   793  03DB  082E               	movf	_kernalIndex,w
+   794  03DC  21FD               	fcall	_SaveKernal
+   795                           
+   796                           ;C128-Quad-Kernal.c: 257: SetKernal(kernalIndex);
+   797  03DD  1283               	bcf	3,5	;RP0=0, select bank0
+   798  03DE  082E               	movf	_kernalIndex,w
+   799  03DF  21B7               	fcall	_SetKernal
+   800                           
+   801                           ;C128-Quad-Kernal.c: 258: DoReset();
+   802  03E0  21CC               	fcall	_DoReset
+   803                           
+   804                           ;C128-Quad-Kernal.c: 259: break;
+   805  03E1  2BED               	goto	l1061
+   806  03E2                     l1057:
+   807  03E2  082F               	movf	_select_state,w
+   808                           
+   809                           ; Switch size 1, requested type "simple"
+   810                           ; Number of cases is 3, Range of values is 0 to 2
+   811                           ; switch strategies available:
+   812                           ; Name         Instructions Cycles
+   813                           ; direct_byte            9     6 (fixed)
+   814                           ; simple_byte           10     6 (average)
+   815                           ; jumptable            260     6 (fixed)
+   816                           ;	Chosen strategy is simple_byte
+   817  03E3  3A00               	xorlw	0	; case 0
+   818  03E4  1903               	skipnz
+   819  03E5  2A7C               	goto	l1029
+   820  03E6  3A01               	xorlw	1	; case 1
+   821  03E7  1903               	skipnz
+   822  03E8  2A85               	goto	l121
+   823  03E9  3A03               	xorlw	3	; case 2
+   824  03EA  1903               	skipnz
+   825  03EB  2BD9               	goto	l1047
+   826  03EC  2BED               	goto	l110
+   827  03ED                     l110:
+   828  03ED                     l1061:
+   829  03ED  1283               	bcf	3,5	;RP0=0, select bank0
+   830  03EE  0830               	movf	_main_state,w
+   831                           
+   832                           ; Switch size 1, requested type "simple"
+   833                           ; Number of cases is 2, Range of values is 0 to 1
+   834                           ; switch strategies available:
+   835                           ; Name         Instructions Cycles
+   836                           ; simple_byte            7     4 (average)
+   837                           ; direct_byte            8     6 (fixed)
+   838                           ; jumptable            260     6 (fixed)
+   839                           ;	Chosen strategy is simple_byte
+   840  03EF  3A00               	xorlw	0	; case 0
+   841  03F0  1903               	skipnz
+   842  03F1  2A68               	goto	l1023
+   843  03F2  3A01               	xorlw	1	; case 1
+   844  03F3  1903               	skipnz
+   845  03F4  2BE2               	goto	l1057
+   846  03F5  2BED               	goto	l1061
+   847  03F6  2800               	ljmp	start
+   848  03F7                     __end_of_main:
+   849                           
+   850                           	psect	text1
+   851  01FD                     __ptext1:	
+   852 ;; *************** function _SaveKernal *****************
+   853 ;; Defined at:
+   854 ;;		line 114 in file "C128-Quad-Kernal.c"
+   855 ;; Parameters:    Size  Location     Type
+   856 ;;  index           1    wreg     unsigned char 
+   857 ;; Auto vars:     Size  Location     Type
+   858 ;;  index           1    1[BANK0 ] unsigned char 
+   859 ;; Return value:  Size  Location     Type
+   860 ;;                  1    wreg      void 
+   861 ;; Registers used:
+   862 ;;		wreg, status,2, status,0
+   863 ;; Tracked objects:
+   864 ;;		On entry : 100/0
+   865 ;;		On exit  : 100/100
+   866 ;;		Unchanged: 0/0
+   867 ;; Data sizes:     COMMON   BANK0
+   868 ;;      Params:         0       0
+   869 ;;      Locals:         0       1
+   870 ;;      Temps:          0       1
+   871 ;;      Totals:         0       2
+   872 ;;Total ram usage:        2 bytes
+   873 ;; Hardware stack levels used:    1
+   874 ;; This function calls:
+   875 ;;		Nothing
+   876 ;; This function is called by:
+   877 ;;		_main
+   878 ;; This function uses a non-reentrant model
+   879 ;;
+   880                           
+   881                           
+   882                           ;psect for function _SaveKernal
+   883  01FD                     _SaveKernal:
+   884                           
+   885                           ;incstack = 0
+   886                           ; Regs used in _SaveKernal: [wreg+status,2+status,0]
+   887                           ;SaveKernal@index stored from wreg
+   888  01FD  00A1               	movwf	SaveKernal@index
+   889  01FE                     l75:	
+   890                           ;C128-Quad-Kernal.c: 115: do{ while (EECON1bits.WR) { continue; } EEADR = (0); EEDATA = 
+      +                          (index); EECON1 &= 0x3F; STATUSbits.CARRY = 0; if (INTCONbits.GIE) { STATUSbits.CARRY = 
+      +                          1; } INTCONbits.GIE = 0; EECON1bits.WREN = 1; EECON2 = 0x55; EECON2 = 0xAA; EECON1bits.W
+      +                          R = 1; EECON
+   891                           
+   892  01FE  1683               	bsf	3,5	;RP0=1, select bank1
+   893  01FF  189C               	btfsc	28,1	;volsfr
+   894  0200  29FE               	goto	l75
+   895  0201  019B               	clrf	27	;volatile
+   896  0202  1283               	bcf	3,5	;RP0=0, select bank0
+   897  0203  0821               	movf	SaveKernal@index,w
+   898  0204  1683               	bsf	3,5	;RP0=1, select bank1
+   899  0205  009A               	movwf	26	;volatile
+   900  0206  303F               	movlw	63
+   901  0207  1283               	bcf	3,5	;RP0=0, select bank0
+   902  0208  00A0               	movwf	??_SaveKernal
+   903  0209  0820               	movf	??_SaveKernal,w
+   904  020A  1683               	bsf	3,5	;RP0=1, select bank1
+   905  020B  059C               	andwf	28,f	;volsfr
+   906  020C  1003               	bcf	3,0	;volatile
+   907  020D  1B8B               	btfsc	11,7	;volatile
+   908  020E  1403               	bsf	3,0	;volatile
+   909  020F  138B               	bcf	11,7	;volatile
+   910  0210  151C               	bsf	28,2	;volsfr
+   911  0211  3055               	movlw	85
+   912  0212  009D               	movwf	29	;volsfr
+   913  0213  30AA               	movlw	170
+   914  0214  009D               	movwf	29	;volsfr
+   915  0215  149C               	bsf	28,1	;volsfr
+   916  0216  111C               	bcf	28,2	;volsfr
+   917  0217  1C03               	btfss	3,0	;volatile
+   918  0218  0008               	return
+   919  0219  178B               	bsf	11,7	;volatile
+   920  021A  0008               	return
+   921  021B                     __end_of_SaveKernal:
+   922                           
+   923                           	psect	text2
+   924  01A6                     __ptext2:	
+   925 ;; *************** function _RestorePressedTime *****************
+   926 ;; Defined at:
+   927 ;;		line 85 in file "C128-Quad-Kernal.c"
+   928 ;; Parameters:    Size  Location     Type
+   929 ;;  max             1    wreg     unsigned char 
+   930 ;; Auto vars:     Size  Location     Type
+   931 ;;  max             1    7[BANK0 ] unsigned char 
+   932 ;;  count           1    8[BANK0 ] unsigned char 
+   933 ;; Return value:  Size  Location     Type
+   934 ;;                  1    wreg      unsigned char 
+   935 ;; Registers used:
+   936 ;;		wreg, status,2, status,0, pclath, cstack
+   937 ;; Tracked objects:
+   938 ;;		On entry : 100/0
+   939 ;;		On exit  : 100/0
+   940 ;;		Unchanged: 0/0
+   941 ;; Data sizes:     COMMON   BANK0
+   942 ;;      Params:         0       0
+   943 ;;      Locals:         0       2
+   944 ;;      Temps:          0       1
+   945 ;;      Totals:         0       3
+   946 ;;Total ram usage:        3 bytes
+   947 ;; Hardware stack levels used:    1
+   948 ;; Hardware stack levels required when called:    2
+   949 ;; This function calls:
+   950 ;;		_RestorePressed
+   951 ;; This function is called by:
+   952 ;;		_main
+   953 ;; This function uses a non-reentrant model
+   954 ;;
+   955                           
+   956                           
+   957                           ;psect for function _RestorePressedTime
+   958  01A6                     _RestorePressedTime:
+   959                           
+   960                           ;incstack = 0
+   961                           ; Regs used in _RestorePressedTime: [wreg+status,2+status,0+pclath+cstack]
+   962                           ;RestorePressedTime@max stored from wreg
+   963  01A6  00A7               	movwf	RestorePressedTime@max
+   964                           
+   965                           ;C128-Quad-Kernal.c: 87: byte count = 0;
+   966  01A7  01A8               	clrf	RestorePressedTime@count
+   967                           
+   968                           ;C128-Quad-Kernal.c: 88: while(RestorePressed() && count < max) {
+   969  01A8  29B1               	goto	l951
+   970  01A9                     l953:
+   971  01A9  0827               	movf	RestorePressedTime@max,w
+   972  01AA  0228               	subwf	RestorePressedTime@count,w
+   973  01AB  1803               	btfsc	3,0
+   974  01AC  29B5               	goto	l955
+   975                           
+   976                           ;C128-Quad-Kernal.c: 89: count++;
+   977  01AD  3001               	movlw	1
+   978  01AE  00A6               	movwf	??_RestorePressedTime
+   979  01AF  0826               	movf	??_RestorePressedTime,w
+   980  01B0  07A8               	addwf	RestorePressedTime@count,f
+   981  01B1                     l951:
+   982  01B1  2187               	fcall	_RestorePressed
+   983  01B2  3A00               	xorlw	0
+   984  01B3  1D03               	btfss	3,2
+   985  01B4  29A9               	goto	l953
+   986  01B5                     l955:
+   987                           
+   988                           ;C128-Quad-Kernal.c: 90: };C128-Quad-Kernal.c: 91: return count;
+   989  01B5  0828               	movf	RestorePressedTime@count,w
+   990  01B6  0008               	return
+   991  01B7                     __end_of_RestorePressedTime:
+   992                           
+   993                           	psect	text3
+   994  0187                     __ptext3:	
+   995 ;; *************** function _RestorePressed *****************
+   996 ;; Defined at:
+   997 ;;		line 70 in file "C128-Quad-Kernal.c"
+   998 ;; Parameters:    Size  Location     Type
+   999 ;;		None
+  1000 ;; Auto vars:     Size  Location     Type
+  1001 ;;  pressed         1    5[BANK0 ] unsigned char 
+  1002 ;; Return value:  Size  Location     Type
+  1003 ;;                  1    wreg      unsigned char 
+  1004 ;; Registers used:
+  1005 ;;		wreg, status,2, status,0, pclath, cstack
+  1006 ;; Tracked objects:
+  1007 ;;		On entry : 100/0
+  1008 ;;		On exit  : 100/0
+  1009 ;;		Unchanged: 0/0
+  1010 ;; Data sizes:     COMMON   BANK0
+  1011 ;;      Params:         0       0
+  1012 ;;      Locals:         0       1
+  1013 ;;      Temps:          0       0
+  1014 ;;      Totals:         0       1
+  1015 ;;Total ram usage:        1 bytes
+  1016 ;; Hardware stack levels used:    1
+  1017 ;; Hardware stack levels required when called:    1
+  1018 ;; This function calls:
+  1019 ;;		_Delay
+  1020 ;; This function is called by:
+  1021 ;;		_RestorePressedTime
+  1022 ;;		_main
+  1023 ;; This function uses a non-reentrant model
+  1024 ;;
+  1025                           
+  1026                           
+  1027                           ;psect for function _RestorePressed
+  1028  0187                     _RestorePressed:
+  1029                           
+  1030                           ;C128-Quad-Kernal.c: 71: byte pressed = 0;
+  1031                           
+  1032                           ;incstack = 0
+  1033                           ; Regs used in _RestorePressed: [wreg+status,2+status,0+pclath+cstack]
+  1034  0187  01A5               	clrf	RestorePressed@pressed
+  1035                           
+  1036                           ;C128-Quad-Kernal.c: 72: if(!GPIObits.GP3) {
+  1037  0188  1985               	btfsc	5,3	;volatile
+  1038  0189  2993               	goto	l915
+  1039                           
+  1040                           ;C128-Quad-Kernal.c: 73: Delay(10);
+  1041  018A  300A               	movlw	10
+  1042  018B  00A0               	movwf	Delay@ms
+  1043  018C  3000               	movlw	0
+  1044  018D  00A1               	movwf	Delay@ms+1
+  1045  018E  21E4               	fcall	_Delay
+  1046                           
+  1047                           ;C128-Quad-Kernal.c: 74: if(!GPIObits.GP3) {
+  1048  018F  1985               	btfsc	5,3	;volatile
+  1049  0190  2993               	goto	l915
+  1050                           
+  1051                           ;C128-Quad-Kernal.c: 75: pressed = 1;
+  1052  0191  01A5               	clrf	RestorePressed@pressed
+  1053  0192  0AA5               	incf	RestorePressed@pressed,f
+  1054  0193                     l915:
+  1055                           
+  1056                           ;C128-Quad-Kernal.c: 76: };C128-Quad-Kernal.c: 77: };C128-Quad-Kernal.c: 78: return pres
+      +                          sed;
+  1057  0193  0825               	movf	RestorePressed@pressed,w
+  1058  0194  0008               	return
+  1059  0195                     __end_of_RestorePressed:
+  1060                           
+  1061                           	psect	text4
+  1062  023C                     __ptext4:	
+  1063 ;; *************** function _Init *****************
+  1064 ;; Defined at:
+  1065 ;;		line 171 in file "C128-Quad-Kernal.c"
+  1066 ;; Parameters:    Size  Location     Type
+  1067 ;;		None
+  1068 ;; Auto vars:     Size  Location     Type
+  1069 ;;		None
+  1070 ;; Return value:  Size  Location     Type
+  1071 ;;                  1    wreg      void 
+  1072 ;; Registers used:
+  1073 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+  1074 ;; Tracked objects:
+  1075 ;;		On entry : B00/0
+  1076 ;;		On exit  : 100/0
+  1077 ;;		Unchanged: 0/0
+  1078 ;; Data sizes:     COMMON   BANK0
+  1079 ;;      Params:         0       0
+  1080 ;;      Locals:         0       0
+  1081 ;;      Temps:          0       1
+  1082 ;;      Totals:         0       1
+  1083 ;;Total ram usage:        1 bytes
+  1084 ;; Hardware stack levels used:    1
+  1085 ;; Hardware stack levels required when called:    4
+  1086 ;; This function calls:
+  1087 ;;		_Delay
+  1088 ;;		_DoReset
+  1089 ;;		_FlashSelectedKernal
+  1090 ;;		_LEDsOn
+  1091 ;;		_LoadKernal
+  1092 ;;		_SetKernal
+  1093 ;; This function is called by:
+  1094 ;;		_main
+  1095 ;; This function uses a non-reentrant model
+  1096 ;;
+  1097                           
+  1098                           
+  1099                           ;psect for function _Init
+  1100  023C                     _Init:
+  1101                           
+  1102                           ;C128-Quad-Kernal.c: 172: OPTION_REG = 0;
+  1103                           
+  1104                           ;incstack = 0
+  1105                           ; Regs used in _Init: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+  1106  023C  1683               	bsf	3,5	;RP0=1, select bank1
+  1107  023D  0181               	clrf	1	;volatile
+  1108                           
+  1109                           ;C128-Quad-Kernal.c: 173: WPUbits.WPU1 = 1;
+  1110  023E  1495               	bsf	21,1	;volatile
+  1111                           
+  1112                           ;C128-Quad-Kernal.c: 174: WPUbits.WPU2 = 1;
+  1113  023F  1515               	bsf	21,2	;volatile
+  1114                           
+  1115                           ;C128-Quad-Kernal.c: 175: WPUbits.WPU5 = 1;
+  1116  0240  1695               	bsf	21,5	;volatile
+  1117                           
+  1118                           ;C128-Quad-Kernal.c: 176: CMCON = 0b00000111;
+  1119  0241  3007               	movlw	7
+  1120  0242  1283               	bcf	3,5	;RP0=0, select bank0
+  1121  0243  0099               	movwf	25	;volatile
+  1122                           
+  1123                           ;C128-Quad-Kernal.c: 177: TRISIO = 0b00001100;
+  1124  0244  300C               	movlw	12
+  1125  0245  1683               	bsf	3,5	;RP0=1, select bank1
+  1126  0246  0085               	movwf	5	;volatile
+  1127                           
+  1128                           ;C128-Quad-Kernal.c: 178: GPIObits.GP2 = 1;
+  1129  0247  1283               	bcf	3,5	;RP0=0, select bank0
+  1130  0248  1505               	bsf	5,2	;volatile
+  1131                           
+  1132                           ;C128-Quad-Kernal.c: 179: GPIObits.GP3 = 1;
+  1133  0249  1585               	bsf	5,3	;volatile
+  1134                           
+  1135                           ;C128-Quad-Kernal.c: 180: GPIObits.GP1 = 1;
+  1136  024A  1485               	bsf	5,1	;volatile
+  1137                           
+  1138                           ;C128-Quad-Kernal.c: 181: GPIObits.GP0 = 1;
+  1139  024B  1405               	bsf	5,0	;volatile
+  1140                           
+  1141                           ;C128-Quad-Kernal.c: 183: Delay(50);
+  1142  024C  3032               	movlw	50
+  1143  024D  00A0               	movwf	Delay@ms
+  1144  024E  3000               	movlw	0
+  1145  024F  00A1               	movwf	Delay@ms+1
+  1146  0250  21E4               	fcall	_Delay
+  1147                           
+  1148                           ;C128-Quad-Kernal.c: 185: kernalIndex = LoadKernal();
+  1149  0251  217C               	fcall	_LoadKernal
+  1150  0252  1283               	bcf	3,5	;RP0=0, select bank0
+  1151  0253  00AA               	movwf	??_Init
+  1152  0254  082A               	movf	??_Init,w
+  1153  0255  00AE               	movwf	_kernalIndex
+  1154                           
+  1155                           ;C128-Quad-Kernal.c: 186: SetKernal(kernalIndex);
+  1156  0256  082E               	movf	_kernalIndex,w
+  1157  0257  21B7               	fcall	_SetKernal
+  1158                           
+  1159                           ;C128-Quad-Kernal.c: 187: DoReset();
+  1160  0258  21CC               	fcall	_DoReset
+  1161                           
+  1162                           ;C128-Quad-Kernal.c: 189: IOC = 0b00001100;
+  1163  0259  300C               	movlw	12
+  1164  025A  1683               	bsf	3,5	;RP0=1, select bank1
+  1165  025B  0096               	movwf	22	;volatile
+  1166                           
+  1167                           ;C128-Quad-Kernal.c: 190: GPIE = 1;
+  1168  025C  158B               	bsf	11,3	;volatile
+  1169                           
+  1170                           ;C128-Quad-Kernal.c: 191: GIE = 0;
+  1171  025D  138B               	bcf	11,7	;volatile
+  1172                           
+  1173                           ;C128-Quad-Kernal.c: 193: FlashSelectedKernal();
+  1174  025E  221B               	fcall	_FlashSelectedKernal
+  1175                           
+  1176                           ;C128-Quad-Kernal.c: 195: LEDsOn();
+  1177  025F  216F               	fcall	_LEDsOn
+  1178                           
+  1179                           ;C128-Quad-Kernal.c: 197: Delay(250);
+  1180  0260  30FA               	movlw	250
+  1181  0261  00A0               	movwf	Delay@ms
+  1182  0262  3000               	movlw	0
+  1183  0263  00A1               	movwf	Delay@ms+1
+  1184  0264  21E4               	fcall	_Delay
+  1185  0265  0008               	return
+  1186  0266                     __end_of_Init:
+  1187                           
+  1188                           	psect	text5
+  1189  01B7                     __ptext5:	
+  1190 ;; *************** function _SetKernal *****************
+  1191 ;; Defined at:
+  1192 ;;		line 97 in file "C128-Quad-Kernal.c"
+  1193 ;; Parameters:    Size  Location     Type
+  1194 ;;  value           1    wreg     unsigned char 
+  1195 ;; Auto vars:     Size  Location     Type
+  1196 ;;  value           1    5[BANK0 ] unsigned char 
+  1197 ;; Return value:  Size  Location     Type
+  1198 ;;                  1    wreg      void 
+  1199 ;; Registers used:
+  1200 ;;		wreg, status,2, status,0, pclath, cstack
+  1201 ;; Tracked objects:
+  1202 ;;		On entry : 100/0
+  1203 ;;		On exit  : 100/0
+  1204 ;;		Unchanged: 0/0
+  1205 ;; Data sizes:     COMMON   BANK0
+  1206 ;;      Params:         0       0
+  1207 ;;      Locals:         0       1
+  1208 ;;      Temps:          0       0
+  1209 ;;      Totals:         0       1
+  1210 ;;Total ram usage:        1 bytes
+  1211 ;; Hardware stack levels used:    1
+  1212 ;; Hardware stack levels required when called:    1
+  1213 ;; This function calls:
+  1214 ;;		_Delay
+  1215 ;; This function is called by:
+  1216 ;;		_Init
+  1217 ;;		_main
+  1218 ;; This function uses a non-reentrant model
+  1219 ;;
+  1220                           
+  1221                           
+  1222                           ;psect for function _SetKernal
+  1223  01B7                     _SetKernal:
+  1224                           
+  1225                           ;incstack = 0
+  1226                           ; Regs used in _SetKernal: [wreg+status,2+status,0+pclath+cstack]
+  1227                           ;SetKernal@value stored from wreg
+  1228  01B7  00A5               	movwf	SetKernal@value
+  1229                           
+  1230                           ;C128-Quad-Kernal.c: 98: GPIObits.GP5 = value & 01 ? 1 : 0;
+  1231  01B8  1C25               	btfss	SetKernal@value,0
+  1232  01B9  29BD               	goto	u290
+  1233  01BA  1283               	bcf	3,5	;RP0=0, select bank0
+  1234  01BB  1685               	bsf	5,5	;volatile
+  1235  01BC  29BF               	goto	u304
+  1236  01BD                     u290:
+  1237  01BD  1283               	bcf	3,5	;RP0=0, select bank0
+  1238  01BE  1285               	bcf	5,5	;volatile
+  1239  01BF                     u304:
+  1240                           
+  1241                           ;C128-Quad-Kernal.c: 99: GPIObits.GP4 = value & 02 ? 1 : 0;
+  1242  01BF  1CA5               	btfss	SetKernal@value,1
+  1243  01C0  29C4               	goto	u310
+  1244  01C1  1283               	bcf	3,5	;RP0=0, select bank0
+  1245  01C2  1605               	bsf	5,4	;volatile
+  1246  01C3  29C6               	goto	l921
+  1247  01C4                     u310:
+  1248  01C4  1283               	bcf	3,5	;RP0=0, select bank0
+  1249  01C5  1205               	bcf	5,4	;volatile
+  1250  01C6                     l921:
+  1251                           
+  1252                           ;C128-Quad-Kernal.c: 100: Delay(20);
+  1253  01C6  3014               	movlw	20
+  1254  01C7  00A0               	movwf	Delay@ms
+  1255  01C8  3000               	movlw	0
+  1256  01C9  00A1               	movwf	Delay@ms+1
+  1257  01CA  21E4               	fcall	_Delay
+  1258  01CB  0008               	return
+  1259  01CC                     __end_of_SetKernal:
+  1260                           
+  1261                           	psect	text6
+  1262  017C                     __ptext6:	
+  1263 ;; *************** function _LoadKernal *****************
+  1264 ;; Defined at:
+  1265 ;;		line 121 in file "C128-Quad-Kernal.c"
+  1266 ;; Parameters:    Size  Location     Type
+  1267 ;;		None
+  1268 ;; Auto vars:     Size  Location     Type
+  1269 ;;		None
+  1270 ;; Return value:  Size  Location     Type
+  1271 ;;                  1    wreg      unsigned char 
+  1272 ;; Registers used:
+  1273 ;;		wreg, status,2, status,0
+  1274 ;; Tracked objects:
+  1275 ;;		On entry : 100/0
+  1276 ;;		On exit  : 100/100
+  1277 ;;		Unchanged: 0/0
+  1278 ;; Data sizes:     COMMON   BANK0
+  1279 ;;      Params:         0       0
+  1280 ;;      Locals:         0       0
+  1281 ;;      Temps:          0       1
+  1282 ;;      Totals:         0       1
+  1283 ;;Total ram usage:        1 bytes
+  1284 ;; Hardware stack levels used:    1
+  1285 ;; This function calls:
+  1286 ;;		Nothing
+  1287 ;; This function is called by:
+  1288 ;;		_Init
+  1289 ;;		_main
+  1290 ;; This function uses a non-reentrant model
+  1291 ;;
+  1292                           
+  1293                           
+  1294                           ;psect for function _LoadKernal
+  1295  017C                     _LoadKernal:
+  1296                           
+  1297                           ;C128-Quad-Kernal.c: 122: return ( EEADR = 0, EECON1 &= 0x3F, EECON1bits.RD = 1, EEDATA)
+      +                          ;
+  1298                           
+  1299                           ;incstack = 0
+  1300                           ; Regs used in _LoadKernal: [wreg+status,2+status,0]
+  1301  017C  1683               	bsf	3,5	;RP0=1, select bank1
+  1302  017D  019B               	clrf	27	;volatile
+  1303  017E  303F               	movlw	63
+  1304  017F  1283               	bcf	3,5	;RP0=0, select bank0
+  1305  0180  00A0               	movwf	??_LoadKernal
+  1306  0181  0820               	movf	??_LoadKernal,w
+  1307  0182  1683               	bsf	3,5	;RP0=1, select bank1
+  1308  0183  059C               	andwf	28,f	;volsfr
+  1309  0184  141C               	bsf	28,0	;volsfr
+  1310  0185  081A               	movf	26,w	;volatile
+  1311  0186  0008               	return
+  1312  0187                     __end_of_LoadKernal:
+  1313                           
+  1314                           	psect	text7
+  1315  016F                     __ptext7:	
+  1316 ;; *************** function _LEDsOn *****************
+  1317 ;; Defined at:
+  1318 ;;		line 136 in file "C128-Quad-Kernal.c"
+  1319 ;; Parameters:    Size  Location     Type
+  1320 ;;		None
+  1321 ;; Auto vars:     Size  Location     Type
+  1322 ;;		None
+  1323 ;; Return value:  Size  Location     Type
+  1324 ;;                  1    wreg      void 
+  1325 ;; Registers used:
+  1326 ;;		wreg, status,2, status,0, pclath, cstack
+  1327 ;; Tracked objects:
+  1328 ;;		On entry : 0/100
+  1329 ;;		On exit  : 100/0
+  1330 ;;		Unchanged: 0/0
+  1331 ;; Data sizes:     COMMON   BANK0
+  1332 ;;      Params:         0       0
+  1333 ;;      Locals:         0       0
+  1334 ;;      Temps:          0       0
+  1335 ;;      Totals:         0       0
+  1336 ;;Total ram usage:        0 bytes
+  1337 ;; Hardware stack levels used:    1
+  1338 ;; Hardware stack levels required when called:    1
+  1339 ;; This function calls:
+  1340 ;;		_SetLED
+  1341 ;; This function is called by:
+  1342 ;;		_Init
+  1343 ;; This function uses a non-reentrant model
+  1344 ;;
+  1345                           
+  1346                           
+  1347                           ;psect for function _LEDsOn
+  1348  016F                     _LEDsOn:
+  1349                           
+  1350                           ;C128-Quad-Kernal.c: 138: SetLED(3);
+  1351                           
+  1352                           ;incstack = 0
+  1353                           ; Regs used in _LEDsOn: [wreg+status,2+status,0+pclath+cstack]
+  1354  016F  3003               	movlw	3
+  1355  0170  2195               	fcall	_SetLED
+  1356  0171  0008               	return
+  1357  0172                     __end_of_LEDsOn:
+  1358                           
+  1359                           	psect	text8
+  1360  021B                     __ptext8:	
+  1361 ;; *************** function _FlashSelectedKernal *****************
+  1362 ;; Defined at:
+  1363 ;;		line 154 in file "C128-Quad-Kernal.c"
+  1364 ;; Parameters:    Size  Location     Type
+  1365 ;;		None
+  1366 ;; Auto vars:     Size  Location     Type
+  1367 ;;  i               2    8[BANK0 ] int 
+  1368 ;; Return value:  Size  Location     Type
+  1369 ;;                  1    wreg      void 
+  1370 ;; Registers used:
+  1371 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+  1372 ;; Tracked objects:
+  1373 ;;		On entry : 100/100
+  1374 ;;		On exit  : 0/0
+  1375 ;;		Unchanged: 0/0
+  1376 ;; Data sizes:     COMMON   BANK0
+  1377 ;;      Params:         0       0
+  1378 ;;      Locals:         0       2
+  1379 ;;      Temps:          0       0
+  1380 ;;      Totals:         0       2
+  1381 ;;Total ram usage:        2 bytes
+  1382 ;; Hardware stack levels used:    1
+  1383 ;; Hardware stack levels required when called:    3
+  1384 ;; This function calls:
+  1385 ;;		_Delay
+  1386 ;;		_FlashLEDs
+  1387 ;; This function is called by:
+  1388 ;;		_Init
+  1389 ;; This function uses a non-reentrant model
+  1390 ;;
+  1391                           
+  1392                           
+  1393                           ;psect for function _FlashSelectedKernal
+  1394  021B                     _FlashSelectedKernal:
+  1395                           
+  1396                           ;C128-Quad-Kernal.c: 156: for(int i = 0; i < 5; i++) {
+  1397                           
+  1398                           ;incstack = 0
+  1399                           ; Regs used in _FlashSelectedKernal: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+  1400  021B  1283               	bcf	3,5	;RP0=0, select bank0
+  1401  021C  01A8               	clrf	FlashSelectedKernal@i
+  1402  021D  01A9               	clrf	FlashSelectedKernal@i+1
+  1403  021E                     l935:
+  1404                           
+  1405                           ;C128-Quad-Kernal.c: 157: FlashLEDs(kernalIndex, 500);
+  1406  021E  30F4               	movlw	244
+  1407  021F  1283               	bcf	3,5	;RP0=0, select bank0
+  1408  0220  00A5               	movwf	FlashLEDs@delay
+  1409  0221  3001               	movlw	1
+  1410  0222  00A6               	movwf	FlashLEDs@delay+1
+  1411  0223  082E               	movf	_kernalIndex,w
+  1412  0224  2172               	fcall	_FlashLEDs
+  1413                           
+  1414                           ;C128-Quad-Kernal.c: 158: Delay(500);
+  1415  0225  30F4               	movlw	244
+  1416  0226  00A0               	movwf	Delay@ms
+  1417  0227  3001               	movlw	1
+  1418  0228  00A1               	movwf	Delay@ms+1
+  1419  0229  21E4               	fcall	_Delay
+  1420  022A  3001               	movlw	1
+  1421  022B  07A8               	addwf	FlashSelectedKernal@i,f
+  1422  022C  1803               	skipnc
+  1423  022D  0AA9               	incf	FlashSelectedKernal@i+1,f
+  1424  022E  3000               	movlw	0
+  1425  022F  07A9               	addwf	FlashSelectedKernal@i+1,f
+  1426  0230  0829               	movf	FlashSelectedKernal@i+1,w
+  1427  0231  3A80               	xorlw	128
+  1428  0232  00DF               	movwf	95
+  1429  0233  3080               	movlw	128
+  1430  0234  025F               	subwf	95,w
+  1431  0235  1D03               	skipz
+  1432  0236  2A39               	goto	u335
+  1433  0237  3005               	movlw	5
+  1434  0238  0228               	subwf	FlashSelectedKernal@i,w
+  1435  0239                     u335:
+  1436  0239  1803               	btfsc	3,0
+  1437  023A  0008               	return
+  1438  023B  2A1E               	goto	l935
+  1439  023C                     __end_of_FlashSelectedKernal:
+  1440                           
+  1441                           	psect	text9
+  1442  01CC                     __ptext9:	
+  1443 ;; *************** function _DoReset *****************
+  1444 ;; Defined at:
+  1445 ;;		line 162 in file "C128-Quad-Kernal.c"
+  1446 ;; Parameters:    Size  Location     Type
+  1447 ;;		None
+  1448 ;; Auto vars:     Size  Location     Type
+  1449 ;;		None
+  1450 ;; Return value:  Size  Location     Type
+  1451 ;;                  1    wreg      void 
+  1452 ;; Registers used:
+  1453 ;;		wreg, status,2, status,0, pclath, cstack
+  1454 ;; Tracked objects:
+  1455 ;;		On entry : 100/0
+  1456 ;;		On exit  : 100/0
+  1457 ;;		Unchanged: 0/0
+  1458 ;; Data sizes:     COMMON   BANK0
+  1459 ;;      Params:         0       0
+  1460 ;;      Locals:         0       0
+  1461 ;;      Temps:          0       0
+  1462 ;;      Totals:         0       0
+  1463 ;;Total ram usage:        0 bytes
+  1464 ;; Hardware stack levels used:    1
+  1465 ;; Hardware stack levels required when called:    3
+  1466 ;; This function calls:
+  1467 ;;		_Delay
+  1468 ;;		_FlashLEDs
+  1469 ;; This function is called by:
+  1470 ;;		_Init
+  1471 ;;		_main
+  1472 ;; This function uses a non-reentrant model
+  1473 ;;
+  1474                           
+  1475                           
+  1476                           ;psect for function _DoReset
+  1477  01CC                     _DoReset:
+  1478                           
+  1479                           ;C128-Quad-Kernal.c: 163: GPIObits.GP2 = 0;
+  1480                           
+  1481                           ;incstack = 0
+  1482                           ; Regs used in _DoReset: [wreg+status,2+status,0+pclath+cstack]
+  1483  01CC  1105               	bcf	5,2	;volatile
+  1484                           
+  1485                           ;C128-Quad-Kernal.c: 164: TRISIObits.TRISIO2 = 0;
+  1486  01CD  1683               	bsf	3,5	;RP0=1, select bank1
+  1487  01CE  1105               	bcf	5,2	;volatile
+  1488                           
+  1489                           ;C128-Quad-Kernal.c: 165: FlashLEDs(3, 50);
+  1490  01CF  3032               	movlw	50
+  1491  01D0  1283               	bcf	3,5	;RP0=0, select bank0
+  1492  01D1  00A5               	movwf	FlashLEDs@delay
+  1493  01D2  3000               	movlw	0
+  1494  01D3  00A6               	movwf	FlashLEDs@delay+1
+  1495  01D4  3003               	movlw	3
+  1496  01D5  2172               	fcall	_FlashLEDs
+  1497                           
+  1498                           ;C128-Quad-Kernal.c: 166: Delay(200);
+  1499  01D6  30C8               	movlw	200
+  1500  01D7  00A0               	movwf	Delay@ms
+  1501  01D8  3000               	movlw	0
+  1502  01D9  00A1               	movwf	Delay@ms+1
+  1503  01DA  21E4               	fcall	_Delay
+  1504                           
+  1505                           ;C128-Quad-Kernal.c: 167: TRISIObits.TRISIO2 = 1;
+  1506  01DB  1683               	bsf	3,5	;RP0=1, select bank1
+  1507  01DC  1505               	bsf	5,2	;volatile
+  1508                           
+  1509                           ;C128-Quad-Kernal.c: 168: Delay(250);
+  1510  01DD  30FA               	movlw	250
+  1511  01DE  1283               	bcf	3,5	;RP0=0, select bank0
+  1512  01DF  00A0               	movwf	Delay@ms
+  1513  01E0  3000               	movlw	0
+  1514  01E1  00A1               	movwf	Delay@ms+1
+  1515  01E2  21E4               	fcall	_Delay
+  1516  01E3  0008               	return
+  1517  01E4                     __end_of_DoReset:
+  1518                           
+  1519                           	psect	text10
+  1520  0172                     __ptext10:	
+  1521 ;; *************** function _FlashLEDs *****************
+  1522 ;; Defined at:
+  1523 ;;		line 144 in file "C128-Quad-Kernal.c"
+  1524 ;; Parameters:    Size  Location     Type
+  1525 ;;  value           1    wreg     unsigned char 
+  1526 ;;  delay           2    5[BANK0 ] unsigned short 
+  1527 ;; Auto vars:     Size  Location     Type
+  1528 ;;  value           1    7[BANK0 ] unsigned char 
+  1529 ;; Return value:  Size  Location     Type
+  1530 ;;                  1    wreg      void 
+  1531 ;; Registers used:
+  1532 ;;		wreg, status,2, status,0, pclath, cstack
+  1533 ;; Tracked objects:
+  1534 ;;		On entry : 100/0
+  1535 ;;		On exit  : 100/0
+  1536 ;;		Unchanged: 0/0
+  1537 ;; Data sizes:     COMMON   BANK0
+  1538 ;;      Params:         0       2
+  1539 ;;      Locals:         0       1
+  1540 ;;      Temps:          0       0
+  1541 ;;      Totals:         0       3
+  1542 ;;Total ram usage:        3 bytes
+  1543 ;; Hardware stack levels used:    1
+  1544 ;; Hardware stack levels required when called:    2
+  1545 ;; This function calls:
+  1546 ;;		_Delay
+  1547 ;;		_LEDsOff
+  1548 ;;		_SetLED
+  1549 ;; This function is called by:
+  1550 ;;		_FlashSelectedKernal
+  1551 ;;		_DoReset
+  1552 ;;		_main
+  1553 ;; This function uses a non-reentrant model
+  1554 ;;
+  1555                           
+  1556                           
+  1557                           ;psect for function _FlashLEDs
+  1558  0172                     _FlashLEDs:
+  1559                           
+  1560                           ;incstack = 0
+  1561                           ; Regs used in _FlashLEDs: [wreg+status,2+status,0+pclath+cstack]
+  1562                           ;FlashLEDs@value stored from wreg
+  1563  0172  00A7               	movwf	FlashLEDs@value
+  1564                           
+  1565                           ;C128-Quad-Kernal.c: 145: LEDsOff();
+  1566  0173  216C               	fcall	_LEDsOff
+  1567                           
+  1568                           ;C128-Quad-Kernal.c: 146: Delay(delay);
+  1569  0174  0826               	movf	FlashLEDs@delay+1,w
+  1570  0175  00A1               	movwf	Delay@ms+1
+  1571  0176  0825               	movf	FlashLEDs@delay,w
+  1572  0177  00A0               	movwf	Delay@ms
+  1573  0178  21E4               	fcall	_Delay
+  1574                           
+  1575                           ;C128-Quad-Kernal.c: 147: SetLED(value);
+  1576  0179  0827               	movf	FlashLEDs@value,w
+  1577  017A  2195               	fcall	_SetLED
+  1578  017B  0008               	return
+  1579  017C                     __end_of_FlashLEDs:
+  1580                           
+  1581                           	psect	text11
+  1582  016C                     __ptext11:	
+  1583 ;; *************** function _LEDsOff *****************
+  1584 ;; Defined at:
+  1585 ;;		line 128 in file "C128-Quad-Kernal.c"
+  1586 ;; Parameters:    Size  Location     Type
+  1587 ;;		None
+  1588 ;; Auto vars:     Size  Location     Type
+  1589 ;;		None
+  1590 ;; Return value:  Size  Location     Type
+  1591 ;;                  1    wreg      void 
+  1592 ;; Registers used:
+  1593 ;;		wreg, status,2, status,0, pclath, cstack
+  1594 ;; Tracked objects:
+  1595 ;;		On entry : 100/0
+  1596 ;;		On exit  : 100/0
+  1597 ;;		Unchanged: 0/0
+  1598 ;; Data sizes:     COMMON   BANK0
+  1599 ;;      Params:         0       0
+  1600 ;;      Locals:         0       0
+  1601 ;;      Temps:          0       0
+  1602 ;;      Totals:         0       0
+  1603 ;;Total ram usage:        0 bytes
+  1604 ;; Hardware stack levels used:    1
+  1605 ;; Hardware stack levels required when called:    1
+  1606 ;; This function calls:
+  1607 ;;		_SetLED
+  1608 ;; This function is called by:
+  1609 ;;		_FlashLEDs
+  1610 ;; This function uses a non-reentrant model
+  1611 ;;
+  1612                           
+  1613                           
+  1614                           ;psect for function _LEDsOff
+  1615  016C                     _LEDsOff:
+  1616                           
+  1617                           ;C128-Quad-Kernal.c: 130: SetLED(0);
+  1618                           
+  1619                           ;incstack = 0
+  1620                           ; Regs used in _LEDsOff: [wreg+status,2+status,0+pclath+cstack]
+  1621  016C  3000               	movlw	0
+  1622  016D  2195               	fcall	_SetLED
+  1623  016E  0008               	return
+  1624  016F                     __end_of_LEDsOff:
+  1625                           
+  1626                           	psect	text12
+  1627  0195                     __ptext12:	
+  1628 ;; *************** function _SetLED *****************
+  1629 ;; Defined at:
+  1630 ;;		line 106 in file "C128-Quad-Kernal.c"
+  1631 ;; Parameters:    Size  Location     Type
+  1632 ;;  value           1    wreg     unsigned char 
+  1633 ;; Auto vars:     Size  Location     Type
+  1634 ;;  value           1    0[BANK0 ] unsigned char 
+  1635 ;; Return value:  Size  Location     Type
+  1636 ;;                  1    wreg      void 
+  1637 ;; Registers used:
+  1638 ;;		wreg
+  1639 ;; Tracked objects:
+  1640 ;;		On entry : 0/0
+  1641 ;;		On exit  : 100/0
+  1642 ;;		Unchanged: 0/0
+  1643 ;; Data sizes:     COMMON   BANK0
+  1644 ;;      Params:         0       0
+  1645 ;;      Locals:         0       1
+  1646 ;;      Temps:          0       0
+  1647 ;;      Totals:         0       1
+  1648 ;;Total ram usage:        1 bytes
+  1649 ;; Hardware stack levels used:    1
+  1650 ;; This function calls:
+  1651 ;;		Nothing
+  1652 ;; This function is called by:
+  1653 ;;		_LEDsOff
+  1654 ;;		_LEDsOn
+  1655 ;;		_FlashLEDs
+  1656 ;;		_main
+  1657 ;; This function uses a non-reentrant model
+  1658 ;;
+  1659                           
+  1660                           
+  1661                           ;psect for function _SetLED
+  1662  0195                     _SetLED:
+  1663                           
+  1664                           ;incstack = 0
+  1665                           ; Regs used in _SetLED: [wreg]
+  1666                           ;SetLED@value stored from wreg
+  1667  0195  1283               	bcf	3,5	;RP0=0, select bank0
+  1668  0196  00A0               	movwf	SetLED@value
+  1669                           
+  1670                           ;C128-Quad-Kernal.c: 107: GPIObits.GP1 = value & 01 ? 1 : 0;
+  1671  0197  1C20               	btfss	SetLED@value,0
+  1672  0198  299C               	goto	u220
+  1673  0199  1283               	bcf	3,5	;RP0=0, select bank0
+  1674  019A  1485               	bsf	5,1	;volatile
+  1675  019B  299E               	goto	u234
+  1676  019C                     u220:
+  1677  019C  1283               	bcf	3,5	;RP0=0, select bank0
+  1678  019D  1085               	bcf	5,1	;volatile
+  1679  019E                     u234:
+  1680                           
+  1681                           ;C128-Quad-Kernal.c: 108: GPIObits.GP0 = value & 02 ? 1 : 0;
+  1682  019E  1CA0               	btfss	SetLED@value,1
+  1683  019F  29A3               	goto	u240
+  1684  01A0  1283               	bcf	3,5	;RP0=0, select bank0
+  1685  01A1  1405               	bsf	5,0	;volatile
+  1686  01A2  0008               	return
+  1687  01A3                     u240:
+  1688  01A3  1283               	bcf	3,5	;RP0=0, select bank0
+  1689  01A4  1005               	bcf	5,0	;volatile
+  1690  01A5  0008               	return
+  1691  01A6                     __end_of_SetLED:
+  1692                           
+  1693                           	psect	text13
+  1694  01E4                     __ptext13:	
+  1695 ;; *************** function _Delay *****************
+  1696 ;; Defined at:
+  1697 ;;		line 61 in file "C128-Quad-Kernal.c"
+  1698 ;; Parameters:    Size  Location     Type
+  1699 ;;  ms              2    0[BANK0 ] unsigned short 
+  1700 ;; Auto vars:     Size  Location     Type
+  1701 ;;  i               2    3[BANK0 ] int 
+  1702 ;; Return value:  Size  Location     Type
+  1703 ;;                  1    wreg      void 
+  1704 ;; Registers used:
+  1705 ;;		wreg, status,2
+  1706 ;; Tracked objects:
+  1707 ;;		On entry : 100/0
+  1708 ;;		On exit  : 100/0
+  1709 ;;		Unchanged: 0/0
+  1710 ;; Data sizes:     COMMON   BANK0
+  1711 ;;      Params:         0       2
+  1712 ;;      Locals:         0       2
+  1713 ;;      Temps:          0       1
+  1714 ;;      Totals:         0       5
+  1715 ;;Total ram usage:        5 bytes
+  1716 ;; Hardware stack levels used:    1
+  1717 ;; This function calls:
+  1718 ;;		Nothing
+  1719 ;; This function is called by:
+  1720 ;;		_RestorePressed
+  1721 ;;		_SetKernal
+  1722 ;;		_FlashLEDs
+  1723 ;;		_FlashSelectedKernal
+  1724 ;;		_DoReset
+  1725 ;;		_Init
+  1726 ;; This function uses a non-reentrant model
+  1727 ;;
+  1728                           
+  1729                           
+  1730                           ;psect for function _Delay
+  1731  01E4                     _Delay:
+  1732                           
+  1733                           ;C128-Quad-Kernal.c: 62: for(int i = 0; i < ms; i++) {
+  1734                           
+  1735                           ;incstack = 0
+  1736                           ; Regs used in _Delay: [wreg+status,2]
+  1737  01E4  01A3               	clrf	Delay@i
+  1738  01E5  01A4               	clrf	Delay@i+1
+  1739  01E6                     l49:
+  1740  01E6  0821               	movf	Delay@ms+1,w
+  1741  01E7  0224               	subwf	Delay@i+1,w
+  1742  01E8  1D03               	skipz
+  1743  01E9  29EC               	goto	u265
+  1744  01EA  0820               	movf	Delay@ms,w
+  1745  01EB  0223               	subwf	Delay@i,w
+  1746  01EC                     u265:
+  1747  01EC  1803               	btfsc	3,0
+  1748  01ED  0008               	return
+  1749                           
+  1750                           ;C128-Quad-Kernal.c: 63: _delay((unsigned long)((1)*(4000000/4000.0)));
+  1751  01EE  30C7               	movlw	199
+  1752  01EF  00A2               	movwf	??_Delay
+  1753  01F0                     u437:
+  1754  01F0  29F1               	nop2
+  1755  01F1  0BA2               	decfsz	??_Delay,f
+  1756  01F2  29F0               	goto	u437
+  1757  01F3  29F4               	nop2
+  1758  01F4  29F5               	nop2
+  1759  01F5  3001               	movlw	1
+  1760  01F6  1283               	bcf	3,5	;RP0=0, select bank0
+  1761  01F7  07A3               	addwf	Delay@i,f
+  1762  01F8  1803               	skipnc
+  1763  01F9  0AA4               	incf	Delay@i+1,f
+  1764  01FA  3000               	movlw	0
+  1765  01FB  07A4               	addwf	Delay@i+1,f
+  1766  01FC  29E6               	goto	l49
+  1767  01FD                     __end_of_Delay:
+  1768  005E                     btemp	set	94	;btemp
+  1769  005E                     wtemp0	set	94
+  1770                           
+  1771                           	psect	config
+  1772                           
+  1773                           ;Config register CONFIG @ 0x2007
+  1774                           ;	Oscillator Selection bits
+  1775                           ;	FOSC = INTRCIO, INTOSC oscillator: I/O function on GP4/OSC2/CLKOUT pin, I/O function o
+      +                          n GP5/OSC1/CLKIN
+  1776                           ;	Watchdog Timer Enable bit
+  1777                           ;	WDTE = OFF, WDT disabled
+  1778                           ;	Power-Up Timer Enable bit
+  1779                           ;	PWRTE = OFF, PWRT disabled
+  1780                           ;	GP3/MCLR pin function select
+  1781                           ;	MCLRE = OFF, GP3/MCLR pin function is digital I/O, MCLR internally tied to VDD
+  1782                           ;	Brown-out Detect Enable bit
+  1783                           ;	BOREN = OFF, BOD disabled
+  1784                           ;	Code Protection bit
+  1785                           ;	CP = OFF, Program Memory code protection is disabled
+  1786                           ;	Data Code Protection bit
+  1787                           ;	CPD = OFF, Data memory code protection is disabled
+  1788  2007                     	org	8199
+  1789  2007  3194               	dw	12692
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         5
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            62     12      17
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_Init
+    _RestorePressedTime->_RestorePressed
+    _RestorePressed->_Delay
+    _Init->_FlashSelectedKernal
+    _SetKernal->_Delay
+    _LEDsOn->_SetLED
+    _FlashSelectedKernal->_FlashLEDs
+    _DoReset->_FlashLEDs
+    _FlashLEDs->_Delay
+    _LEDsOff->_SetLED
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0    9952
+                                             11 BANK0      1     1      0
+                            _DoReset
+                          _FlashLEDs
+                               _Init
+                         _LoadKernal
+                     _RestorePressed
+                 _RestorePressedTime
+                         _SaveKernal
+                          _SetKernal
+                             _SetLED
+ ---------------------------------------------------------------------------------
+ (1) _SaveKernal                                           2     2      0      22
+                                              0 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _RestorePressedTime                                   3     3      0     746
+                                              6 BANK0      3     3      0
+                     _RestorePressed
+ ---------------------------------------------------------------------------------
+ (2) _RestorePressed                                       1     1      0     678
+                                              5 BANK0      1     1      0
+                              _Delay
+ ---------------------------------------------------------------------------------
+ (1) _Init                                                 1     1      0    4930
+                                             10 BANK0      1     1      0
+                              _Delay
+                            _DoReset
+                _FlashSelectedKernal
+                             _LEDsOn
+                         _LoadKernal
+                          _SetKernal
+ ---------------------------------------------------------------------------------
+ (1) _SetKernal                                            1     1      0     698
+                                              5 BANK0      1     1      0
+                              _Delay
+ ---------------------------------------------------------------------------------
+ (1) _LoadKernal                                           1     1      0       0
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _LEDsOn                                               0     0      0      44
+                             _SetLED
+ ---------------------------------------------------------------------------------
+ (2) _FlashSelectedKernal                                  2     2      0    1790
+                                              8 BANK0      2     2      0
+                              _Delay
+                          _FlashLEDs
+ ---------------------------------------------------------------------------------
+ (2) _DoReset                                              0     0      0    1744
+                              _Delay
+                          _FlashLEDs
+ ---------------------------------------------------------------------------------
+ (3) _FlashLEDs                                            3     1      2    1090
+                                              5 BANK0      3     1      2
+                              _Delay
+                            _LEDsOff
+                             _SetLED
+ ---------------------------------------------------------------------------------
+ (4) _LEDsOff                                              0     0      0      44
+                             _SetLED
+ ---------------------------------------------------------------------------------
+ (1) _SetLED                                               1     1      0      44
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _Delay                                                5     3      2     654
+                                              0 BANK0      5     3      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _DoReset
+     _Delay
+     _FlashLEDs
+       _Delay
+       _LEDsOff
+         _SetLED
+       _SetLED
+   _FlashLEDs
+     _Delay
+     _LEDsOff
+       _SetLED
+     _SetLED
+   _Init
+     _Delay
+     _DoReset
+       _Delay
+       _FlashLEDs
+         _Delay
+         _LEDsOff
+           _SetLED
+         _SetLED
+     _FlashSelectedKernal
+       _Delay
+       _FlashLEDs
+         _Delay
+         _LEDsOff
+           _SetLED
+         _SetLED
+     _LEDsOn
+       _SetLED
+     _LoadKernal
+     _SetKernal
+       _Delay
+   _LoadKernal
+   _RestorePressed
+     _Delay
+   _RestorePressedTime
+     _RestorePressed
+       _Delay
+   _SaveKernal
+   _SetKernal
+     _Delay
+   _SetLED
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            3E      0       0       3        0.0%
+BANK0               3E      C      11       4       27.4%
+ABS                  0      0      11       5        0.0%
+DATA                 0      0      11       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
+Symbol Table                                                                                   Sat Dec 19 15:39:06 2020
+
+                          l49 01E6                            l75 01FE                           l110 03ED  
+                         l112 027A                           l121 0285                           l130 02A5  
+                         l921 01C6                           l915 0193                           l935 021E  
+                         l951 01B1                           l953 01A9                           l955 01B5  
+                         _GIE 005F                           _IOC 0096                           u220 019C  
+                         u310 01C4                           u240 01A3                           u304 01BF  
+                         u234 019E                           u335 0239                           u265 01EC  
+                         u290 01BD                           u437 01F0         RestorePressedTime@max 0027  
+                        l1023 0268                          l1033 028B                          l1027 0273  
+                        l1037 0296                          l1045 02A8                          l1029 027C  
+                        l1061 03ED                          l1047 03D9                          l1057 03E2  
+             __end_of_LEDsOff 016F                          _GPIE 005B                          _GPIF 0058  
+                        _Init 023C                          _main 0266                          btemp 005E  
+                        start 0000               __end_of_DoReset 01E4                         ?_Init 0020  
+                       ?_main 0020                         _EEADR 009B                         _CMCON 0019  
+     RestorePressedTime@count 0028                FlashLEDs@delay 0025                         _Delay 01E4  
+              FlashLEDs@value 0027                SetKernal@value 0025                         status 0003  
+                       wtemp0 005E                    _LoadKernal 017C                   SetLED@value 0020  
+             __initialization 03F7                  __end_of_Init 0266                  __end_of_main 03F7  
+             SaveKernal@index 0021                        ??_Init 002A                        ??_main 002B  
+          __size_of_FlashLEDs 000A                        ?_Delay 0020                     ??_LEDsOff 0000  
+     __size_of_RestorePressed 000E                    _SaveKernal 01FD                        _EEDATA 009A  
+                      _EECON1 009C                        _EECON2 009D                        Delay@i 0023  
+                   ??_DoReset 0000                        _LEDsOn 016F                        _TRISIO 0085  
+                      _SetLED 0195            __size_of_SetKernal 0015  __size_of_FlashSelectedKernal 0021  
+     __end_of__initialization 03FD   __size_of_RestorePressedTime 0011                   ?_LoadKernal 0020  
+           __end_of_FlashLEDs 017C                 __end_of_Delay 01FD                __pcstackCOMMON 0000  
+                     ??_Delay 0022                   ?_SaveKernal 0020             __end_of_SetKernal 01CC  
+                  __pbssBANK0 002C                       ?_LEDsOn 0020                       ?_SetLED 0020  
+                  __pmaintext 0266          FlashSelectedKernal@i 0028                       Delay@ms 0020  
+                     _LEDsOff 016C           __size_of_LoadKernal 000B                _RestorePressed 0187  
+                     _DoReset 01CC               __size_of_LEDsOn 0003                       _WPUbits 0095  
+                  _main_state 0030               __size_of_SetLED 0011           __size_of_SaveKernal 001E  
+                     __ptext1 01FD                       __ptext2 01A6                       __ptext3 0187  
+                     __ptext4 023C                       __ptext5 01B7                       __ptext6 017C  
+                     __ptext7 016F                       __ptext8 021B                       __ptext9 01CC  
+      __end_of_RestorePressed 0195           _FlashSelectedKernal 021B          end_of_initialization 03FD  
+        ?_FlashSelectedKernal 0020               ?_RestorePressed 0020                __end_of_LEDsOn 0172  
+                ??_LoadKernal 0020                __end_of_SetLED 01A6         ??_FlashSelectedKernal 0000  
+                   _FlashLEDs 0172           start_initialization 03F7            __end_of_LoadKernal 0187  
+                ??_SaveKernal 0020    __end_of_RestorePressedTime 01B7                      ??_LEDsOn 0000  
+                   _SetKernal 01B7                      ??_SetLED 0000                    ?_FlashLEDs 0025  
+          __end_of_SaveKernal 021B                      ?_LEDsOff 0020                     ___latbits 0000  
+               __pcstackBANK0 0020                      ?_DoReset 0020                    ?_SetKernal 0020  
+              __size_of_Delay 0019                      _GPIObits 0005                   ??_FlashLEDs 0000  
+            ??_RestorePressed 0000              __size_of_LEDsOff 0003              __size_of_DoReset 0018  
+                 ??_SetKernal 0000                   _ignoreReset 002D                    _EECON1bits 009C  
+                 _kernalIndex 002E                  _select_state 002F                      __ptext10 0172  
+                    __ptext11 016C                      __ptext12 0195                      __ptext13 01E4  
+               __size_of_Init 002A                 __size_of_main 0191   __end_of_FlashSelectedKernal 023C  
+          _RestorePressedTime 01A6           ?_RestorePressedTime 0020                    _INTCONbits 000B  
+        ??_RestorePressedTime 0026                    _OPTION_REG 0081                   _pressedTime 002C  
+                  _STATUSbits 0003                    _TRISIObits 0085         RestorePressed@pressed 0025  
