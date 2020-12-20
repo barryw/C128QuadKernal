@@ -94,7 +94,7 @@ MP_PROCESSOR_OPTION=12F629
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/C128-Quad-Kernal.p1: C128-Quad-Kernal.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/C128-Quad-Kernal.p1: C128-Quad-Kernal.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/C128-Quad-Kernal.p1.d 
 	@${RM} ${OBJECTDIR}/C128-Quad-Kernal.p1 
@@ -103,7 +103,7 @@ ${OBJECTDIR}/C128-Quad-Kernal.p1: C128-Quad-Kernal.c  nbproject/Makefile-${CND_C
 	@${FIXDEPS} ${OBJECTDIR}/C128-Quad-Kernal.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/C128-Quad-Kernal.p1: C128-Quad-Kernal.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/C128-Quad-Kernal.p1: C128-Quad-Kernal.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/C128-Quad-Kernal.p1.d 
 	@${RM} ${OBJECTDIR}/C128-Quad-Kernal.p1 

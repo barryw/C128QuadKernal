@@ -11,6 +11,9 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$/tmp/xcBGo5AIA.o
+end_init CODE 0 0 0 1 2
+config CONFIG 4 2007 2007 1 2
 $dist/default/production/MPLABX.production.o
 cinit CODE 0 3F7 3F7 8 2
 text1 CODE 0 1FD 1FD 1E 2
@@ -29,9 +32,6 @@ text13 CODE 0 1E4 1E4 19 2
 maintext CODE 0 266 266 191 2
 cstackBANK0 BANK0 1 20 20 C 1
 bssBANK0 BANK0 1 2C 2C 5 1
-config CONFIG 4 2007 2007 1 2
-$/tmp/xcZoDkmDj.o
-end_init CODE 0 0 0 1 2
 config CONFIG 4 2007 2007 1 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -65,17 +65,17 @@ STRING 1-16B 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/MPLABX.production.o
-3F7 cinit CODE >283:/tmp/xcV5sv1cc.s
-3F7 cinit CODE >286:/tmp/xcV5sv1cc.s
-3F7 cinit CODE >309:/tmp/xcV5sv1cc.s
-3F8 cinit CODE >310:/tmp/xcV5sv1cc.s
-3F9 cinit CODE >311:/tmp/xcV5sv1cc.s
-3FA cinit CODE >312:/tmp/xcV5sv1cc.s
-3FB cinit CODE >313:/tmp/xcV5sv1cc.s
-3FC cinit CODE >314:/tmp/xcV5sv1cc.s
-3FD cinit CODE >320:/tmp/xcV5sv1cc.s
-3FD cinit CODE >322:/tmp/xcV5sv1cc.s
-3FE cinit CODE >323:/tmp/xcV5sv1cc.s
+3F7 cinit CODE >283:/tmp/xcCZfLXvt.s
+3F7 cinit CODE >286:/tmp/xcCZfLXvt.s
+3F7 cinit CODE >309:/tmp/xcCZfLXvt.s
+3F8 cinit CODE >310:/tmp/xcCZfLXvt.s
+3F9 cinit CODE >311:/tmp/xcCZfLXvt.s
+3FA cinit CODE >312:/tmp/xcCZfLXvt.s
+3FB cinit CODE >313:/tmp/xcCZfLXvt.s
+3FC cinit CODE >314:/tmp/xcCZfLXvt.s
+3FD cinit CODE >320:/tmp/xcCZfLXvt.s
+3FD cinit CODE >322:/tmp/xcCZfLXvt.s
+3FE cinit CODE >323:/tmp/xcCZfLXvt.s
 1E4 text13 CODE >61:/Users/barry/Git/C128QuadKernal/MPLABX/C128-Quad-Kernal.c
 1E4 text13 CODE >62:/Users/barry/Git/C128QuadKernal/MPLABX/C128-Quad-Kernal.c
 1EE text13 CODE >63:/Users/barry/Git/C128QuadKernal/MPLABX/C128-Quad-Kernal.c
@@ -217,11 +217,11 @@ __Hstrings 7FE 0 ABS 0 strings -
 _GPIE 5B 0 ABS 0 - dist/default/production/MPLABX.production.o
 _GPIF 58 0 ABS 0 - dist/default/production/MPLABX.production.o
 _Init 478 0 CODE 0 text4 dist/default/production/MPLABX.production.o
-___sp 0 0 STACK 2 stack /tmp/xcZoDkmDj.o
+___sp 0 0 STACK 2 stack /tmp/xcBGo5AIA.o
 _main 4CC 0 CODE 0 maintext dist/default/production/MPLABX.production.o
 btemp 5E 0 ABS 0 - dist/default/production/MPLABX.production.o
 _TRISIObits 85 0 ABS 0 - dist/default/production/MPLABX.production.o
-start 0 0 CODE 0 init /tmp/xcZoDkmDj.o
+start 0 0 CODE 0 init /tmp/xcBGo5AIA.o
 __size_of_Init 0 0 ABS 0 - dist/default/production/MPLABX.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production/MPLABX.production.o
 _WPUbits 95 0 ABS 0 - dist/default/production/MPLABX.production.o
@@ -230,12 +230,12 @@ __size_of_DoReset 0 0 ABS 0 - dist/default/production/MPLABX.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_LEDsOff 0 0 ABS 0 - dist/default/production/MPLABX.production.o
 __end_of_SetLED 34C 0 CODE 0 text12 dist/default/production/MPLABX.production.o
-intlevel0 0 0 ENTRY 0 functab /tmp/xcZoDkmDj.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcZoDkmDj.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcZoDkmDj.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcZoDkmDj.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcZoDkmDj.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcZoDkmDj.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcBGo5AIA.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcBGo5AIA.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcBGo5AIA.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcBGo5AIA.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcBGo5AIA.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcBGo5AIA.o
 RestorePressedTime@max 27 0 BANK0 1 cstackBANK0 dist/default/production/MPLABX.production.o
 _main_state 30 0 BANK0 1 bssBANK0 dist/default/production/MPLABX.production.o
 wtemp0 5E 0 ABS 0 - dist/default/production/MPLABX.production.o
@@ -251,8 +251,8 @@ __size_of_SetKernal 0 0 ABS 0 - dist/default/production/MPLABX.production.o
 __Lmaintext 7FE 0 ABS 0 maintext -
 _OPTION_REG 81 0 ABS 0 - dist/default/production/MPLABX.production.o
 _pressedTime 2C 0 BANK0 1 bssBANK0 dist/default/production/MPLABX.production.o
-___stackhi 0 0 ABS 0 - /tmp/xcZoDkmDj.o
-___stacklo 0 0 ABS 0 - /tmp/xcZoDkmDj.o
+___stackhi 0 0 ABS 0 - /tmp/xcBGo5AIA.o
+___stacklo 0 0 ABS 0 - /tmp/xcBGo5AIA.o
 __end_of_DoReset 3C8 0 CODE 0 text9 dist/default/production/MPLABX.production.o
 _SetKernal 36E 0 CODE 0 text5 dist/default/production/MPLABX.production.o
 __size_of_Delay 0 0 ABS 0 - dist/default/production/MPLABX.production.o
@@ -267,7 +267,7 @@ __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/MPLABX.productio
 _SetLED 32A 0 CODE 0 text12 dist/default/production/MPLABX.production.o
 _TRISIO 85 0 ABS 0 - dist/default/production/MPLABX.production.o
 __size_of_LEDsOn 0 0 ABS 0 - dist/default/production/MPLABX.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcZoDkmDj.o
+___int_sp 0 0 STACK 2 stack /tmp/xcBGo5AIA.o
 __Hbank0 7FE 0 ABS 0 bank0 -
 __Hbank1 7FE 0 BANK1 1 bank1 -
 __Hcinit 7FE 0 CODE 0 cinit -
@@ -312,7 +312,7 @@ __S3 0 0 ABS 0 - -
 __Hosccal 7FE 0 CODE 0 osccal -
 __end_of_LoadKernal 30E 0 CODE 0 text6 dist/default/production/MPLABX.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcZoDkmDj.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcBGo5AIA.o
 __LbssBANK0 7FE 0 ABS 0 bssBANK0 -
 SaveKernal@index 21 0 BANK0 1 cstackBANK0 dist/default/production/MPLABX.production.o
 __ptext10 2E4 0 CODE 0 text10 dist/default/production/MPLABX.production.o
@@ -325,7 +325,7 @@ __Lcommon 7FE 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 _DoReset 398 0 CODE 0 text9 dist/default/production/MPLABX.production.o
 _LEDsOff 2D8 0 CODE 0 text11 dist/default/production/MPLABX.production.o
-___osccal_val 7FE 0 CODE 0 osccal /tmp/xcZoDkmDj.o
+___osccal_val 7FE 0 CODE 0 osccal /tmp/xcBGo5AIA.o
 __size_of_FlashSelectedKernal 0 0 ABS 0 - dist/default/production/MPLABX.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -

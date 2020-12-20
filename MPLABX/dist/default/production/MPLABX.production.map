@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/Applications/microchip/xc8/v2.31/pic/dat/en_msgs.txt -cn \
   -h+dist/default/production/MPLABX.production.sym \
   --cmf=dist/default/production/MPLABX.production.cmf -z -Q12F629 \
-  -o/tmp/xcXbd3wP3 --defsym=__MPLAB_BUILD=1 \
+  -o/tmp/xcLaLQgzp --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/MPLABX.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=031h-05Dh -pstack=STACK -ACODE=00h-03FEh \
   -ASTRCODE=00h-03FEh -ASTRING=00h-0FFhx3,0300h-03FEh \
@@ -15,7 +15,7 @@ Linker command line:
   -AIDLOC=02000h-02003h -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry,init,end_init -ppowerup=CODE \
-  -pcinit=CODE -pfunctab=ENTRY -posccal=03FFh -k /tmp/xcZoDkmDj.o \
+  -pcinit=CODE -pfunctab=ENTRY -posccal=03FFh -k /tmp/xcBGo5AIA.o \
   dist/default/production/MPLABX.production.o 
 
 Object code version is 3.11
@@ -25,7 +25,7 @@ Machine type is 12F629
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcZoDkmDj.o
+/tmp/xcBGo5AIA.o
                 end_init                              0        0        1        0       0
                 config                             2007     2007        1        0       4
 dist/default/production/MPLABX.production.o
