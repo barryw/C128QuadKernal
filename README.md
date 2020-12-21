@@ -96,3 +96,5 @@ Connect the 2pin cable to the RESET/RESTORE header pins. The other end of the RE
 Enter select mode by holding down the RESTORE key until the 128's LED flashes. Release the restore key to begin select mode. The C128's LEDs will light to indicate the current selected kernal in binary form. Tap the RESTORE key until the LED shows the binary value of the kernal you'd like to use. Finally, hold down the RESTORE key again to save the KERNAL and reset the machine. It should restart with the selected KERNAL.
 
 When you power on the machine, the LEDs will flash the currently selected kernal 5 times on the 128's LEDs. In the case of kernal 00 being selected, no LEDs will illuminate.
+
+![kernal00](images/Kernal00.JPG) ![kernal01](images/Kernal01.JPG) ![kernal02](images/Kernal02.JPG) ![kernal03](images/Kernal03.JPG)
