@@ -5,6 +5,8 @@
       \____|_|_____\___/   \__\_\\__,_|\__,_|\__,_| |_|\_\___|_|  |_| |_|\__,_|_|
 
 
+<img src="images/QuadKernal128Top.jpg" width="400px"/>&nbsp;&nbsp;&nbsp;<img src="images/QuadKernal128Bottom.jpg" width="400px"/>
+
 #### Introduction
 
 This repository holds the following:
@@ -12,6 +14,7 @@ This repository holds the following:
 - Eagle layout files for the U32 and U35 adapters for a C128. The C128 adapter contains a PIC12F629 microcontroller that manages A14 and A15 of the 27C512 EEPROM and determines which of the 4 kernals are selected. If the C64 adapter is also installed with the required A14/A15 cable, the PIC will also select the kernal of that EEPROM as well.
 - MPLABX project for the PIC firmware that controls the selected kernal.
 
+With this hardware and software, you can create a pair of adapters for your Commodore 128 to allow you to have 4 C128 and 4 C64 kernals available and select between them using your RESTORE key. There is no soldering required and no need to drill holes in your C128's case.
 
 #### How does this work?
 
