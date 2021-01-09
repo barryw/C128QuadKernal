@@ -9,6 +9,7 @@
 
 */
 
+#include <avr/io.h>
 #include <EEPROM.h>
 #include <AceButton.h>
 
@@ -20,7 +21,7 @@ const int KERNAL_COUNT      = 4;
 const int FLASH_COUNT       = 5;
 const int LONG_FLASH_DELAY  = 250;
 const int SHORT_FLASH_DELAY = 100;
-const int RESET_DELAY       = 100;
+const int RESET_DELAY       = 400;
 
 // Default to 2 seconds for a long button press
 const int LONG_PRESS_DELAY  = 2000;
@@ -29,15 +30,15 @@ const int BOTH_LEDS_ON      = 3;
 const int BOTH_LEDS_OFF     = 0;
 
 // Output Pins
-const int LED1_PIN          = 0;  // PIN 13
-const int LED2_PIN          = 1;  // PIN 12
+const int LED1_PIN          = 1;  // PIN 13
+const int LED2_PIN          = 0;  // PIN 12
 
 const int A14_PIN           = 10; // PIN 2
 const int A15_PIN           = 9;  // PIN 3
 
 // Input Pins
 const int RESTORE_PIN       = 3;  // PIN 10
-const int RESET_PIN         = 8;  // PIN 11
+const int RESET_PIN         = 2;  // PIN 11
 
 // We save the selected kernal in byte 0 of EEPROM
 int CURRENT_KERNAL_ID       = 0;
@@ -80,12 +81,14 @@ void setup() {
   pinMode(A14_PIN, OUTPUT);
   pinMode(A15_PIN, OUTPUT);
 
-  // Configure RESTORE and RESET for INPUTs with PULLUPs
+  // Configure RESTORE and RESET for INPUTs
   // Both lines are active low
-  pinMode(RESET_PIN, INPUT_PULLUP);
+  pinMode(RESET_PIN, INPUT);
   pinMode(RESTORE_PIN, INPUT_PULLUP);
+  digitalWrite(RESET_PIN, HIGH);
 
-  // If RESTORE is held down at boot, change modes
+  // If RESTORE is held down at boot, change modes. The change is indicated
+  // by quickly alternating the status of the LEDs.
   if(digitalRead(RESTORE_PIN) == 0)
   {
     alternateLEDs(10,50);
@@ -258,6 +261,10 @@ void flickerLEDs()
   blinkLEDs(BOTH_LEDS_ON, SHORT_FLASH_DELAY);
 }
 
+/*
+ * Alternate the LEDs between digital 01 and 02 which just alternates the
+ * flashing of the LEDs
+ */
 void alternateLEDs(int count, int ms)
 {
   for(int i = 0; i < count; i++)
@@ -276,11 +283,17 @@ void doReset()
 {
   saveKernal(currentKernal);
   updateAddressLines(currentKernal);
-  pinMode(RESET_PIN, OUTPUT);
+  
   digitalWrite(RESET_PIN, LOW);
+  pinMode(RESET_PIN, OUTPUT);
+  
   delay(RESET_DELAY);
+  
+  pinMode(RESET_PIN, INPUT);
   digitalWrite(RESET_PIN, HIGH);
-  pinMode(RESET_PIN, INPUT_PULLUP);
+
+  delay(RESET_DELAY);
+  
   if(mode == BRIEF)
   {
     flashCurrentKernal();
