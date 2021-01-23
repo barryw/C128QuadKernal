@@ -91,6 +91,26 @@ Connect the 2pin cable to the RESET/RESTORE header pins. The other end of the RE
 
 #### Operation
 
-Enter select mode by holding down the RESTORE key until the 128's LED flashes. Release the restore key to begin select mode. The C128's LEDs will light to indicate the current selected kernal in binary form. Tap the RESTORE key until the LED shows the binary value of the kernal you'd like to use. Finally, hold down the RESTORE key again to save the KERNAL and reset the machine. It should restart with the selected KERNAL.
+The adapter has 2 modes: the default mode will only flash the current KERNAL when the machine is first powered on and then illuminate both LEDs. The alternate mode will keep the current KERNAL illuminated at all times.
 
-When you power on the machine, the LEDs will flash the currently selected kernal 5 times on the 128's LEDs. In the case of kernal 00 being selected, no LEDs will illuminate.
+To swap modes, hold down the RESTORE key when the machine is powered on. The LEDs will quickly flash in an alternating pattern to show that the mode has changed.
+
+Enter select mode by holding down the RESTORE key until the 128's LED flashes. Release the restore key to begin select mode. The C128's LEDs will light to indicate the current selected KERNAL in binary form. Tap the RESTORE key until the LED shows the binary value of the KERNAL you'd like to use. Finally, hold down the RESTORE key again to save the KERNAL and reset the machine. It should restart with the selected KERNAL.
+
+In the default mode, the LEDs will flash the currently selected KERNAL 5 times on the 128's LEDs. In the case of KERNAL 00 being selected, no LEDs will illuminate.
+
+In the alternate mode, the LEDs will illuminate to show the currently selected KERNAL.
+
+You can also double tap the RESTORE key in quick succession to advance to the next KERNAL.
+
+#### Updating the firmware
+
+The adapter has an ISP port to allow for easy re-programming. You will need something like this: https://www.sparkfun.com/products/11801
+
+Connect the adapter to your programmer with a 6 pin ISP cable and write the firmware out using avrdude or the Arduino IDE.
+
+#### Version 1
+
+There is an earlier version of this board that uses a PIC12F629 located here: https://github.com/barryw/C128QuadKernal/tree/master
+
+This board does not allow for reprogramming the chip in-circuit.
