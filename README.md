@@ -99,3 +99,9 @@ Enter select mode by holding down the RESTORE key until the 128's LED flashes. R
 When you power on the machine, the LEDs will flash the currently selected kernal 5 times on the 128's LEDs. In the case of kernal 00 being selected, no LEDs will illuminate.
 
 ![kernal00](images/Kernal00.JPG) ![kernal01](images/Kernal01.JPG) ![kernal02](images/Kernal02.JPG) ![kernal03](images/Kernal03.JPG)
+
+#### Version 1
+
+There is a later version of this board that uses an ATTINY84 located here: https://github.com/barryw/C128QuadKernal/tree/attiny84
+
+This board allows for reprogramming the firmware using an ISP header.
