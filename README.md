@@ -6,7 +6,8 @@
 
 
 ![v2board](images/v2board.png)
-
+![schematic](images/schematic.png)
+![board](images/board.png)
 
 
 #### Introduction
