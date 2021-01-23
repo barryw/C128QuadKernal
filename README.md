@@ -35,7 +35,7 @@ TODO
 
 Open the `.brd` files for both C128-Quad-Kernal and C64-Quad-Kernal as you'll need both boards. If you only plan on having kernal swap for the 64 side of the 128, then open the C128-Quad-Kernal brd file. This is the board with the attiny84 chip and it will control A14/A15 of the EEPROM.
 
-Click the button on the toolbar labeled, `Generate CAM Data`. It looks like a factory with a green down arrow. This will generate a ZIP file that you can upload to your board house (I use PCBWay and they're awesome!).
+Click the button on the toolbar labeled, `Generate CAM Data`. It looks like a factory with a green down arrow. This will generate a ZIP file that you can upload to your board house (I use <a href="https://www.pcbway.com/setinvite.aspx?inviteid=340813">PCBWay</a> and they're awesome!).
 
 #### Loading your EEPROM
 
