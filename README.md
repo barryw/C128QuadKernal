@@ -5,7 +5,8 @@
       \____|_|_____\___/   \__\_\\__,_|\__,_|\__,_| |_|\_\___|_|  |_| |_|\__,_|_|
 
 
-![Top](images/QuadKernal128Top.JPG) ![Bottom](images/QuadKernal128Bottom.JPG)
+![board](images/v1board.png)
+
 
 #### Introduction
 
